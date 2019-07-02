@@ -78,6 +78,7 @@ IBM Watson Speech to Text for IBM Cloud Pak for Data
     {: topicgroup}
     Service background
         science.md
+        references.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
