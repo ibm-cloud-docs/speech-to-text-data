@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -88,7 +88,7 @@ Most interfaces also support the following common output features:
 ## Language support
 {: #languages}
 
-The service offers models for the following languages: French, Japanese, Korean, Spanish, and US English. The service does not support all features for all languages. Moreover, it supports some features as generally available (GA) for production use and others as beta offerings for different languages.
+The service offers models for the following languages: Brazilian Portuguese, French, German, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Spanish, UK English, and US English. The service does not support all features for all languages. Moreover, it supports some features as generally available (GA) for production use and others as beta offerings for different languages.
 
 -   The WebSocket and synchronous and asynchronous HTTP interfaces are generally available for all languages.
 -   The service offers both broadband models and narrowband models for all languages. For more information, see [Languages and models](/docs/services/speech-to-text-data?topic=speech-to-text-data-models).

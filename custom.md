@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-24"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -89,12 +89,13 @@ For more information, see [Using custom acoustic and custom language models toge
 ## Language support for customization
 {: #languageSupport}
 
-Language and acoustic model customization are available for all languages. The following table documents the level at which the service supports customization for each language.
+Language and acoustic model customization are available only for some languages. The following table documents the level at which the service supports customization for each language.
 
 -   *GA* indicates that the interface is generally available for production use.
 -   *Beta* indicates that the interface is available as a beta offering.
+-   *Not supported* means that the interface is not available for that language.
 
-You can use both broadband and narrowband models with any supported language. If a language supports language model customization, it also supports grammars. For a list of all available models, see [Supported language models](/docs/services/speech-to-text-data?topic=speech-to-text-data-models#modelsList).
+You can use both broadband and narrowband models with any supported language for which they are available. If a language supports language model customization, it also supports grammars. For a list of all available models, see [Supported language models](/docs/services/speech-to-text-data?topic=speech-to-text-data-models#modelsList).
 
 <table>
   <caption>Table 1. Language support for customization</caption>
@@ -110,7 +111,17 @@ You can use both broadband and narrowband models with any supported language. If
     </th>
   </tr>
   <tr>
+    <td>Brazilian Portuguese</td>
+    <td style="text-align:center">GA</td>
+    <td style="text-align:center">Beta</td>
+  </tr>
+  <tr>
     <td>French</td>
+    <td style="text-align:center">GA</td>
+    <td style="text-align:center">Beta</td>
+  </tr>
+  <tr>
+    <td>German</td>
     <td style="text-align:center">GA</td>
     <td style="text-align:center">Beta</td>
   </tr>
@@ -125,7 +136,22 @@ You can use both broadband and narrowband models with any supported language. If
     <td style="text-align:center">Beta</td>
   </tr>
   <tr>
+    <td>Mandarin Chinese</td>
+    <td style="text-align:center">Not supported</td>
+    <td style="text-align:center">Beta</td>
+  </tr>
+  <tr>
+    <td>Modern Standard Arabic</td>
+    <td style="text-align:center">Not supported</td>
+    <td style="text-align:center">Beta</td>
+  </tr>
+  <tr>
     <td>Spanish</td>
+    <td style="text-align:center">GA</td>
+    <td style="text-align:center">Beta</td>
+  </tr>
+  <tr>
+    <td>UK English</td>
     <td style="text-align:center">GA</td>
     <td style="text-align:center">Beta</td>
   </tr>

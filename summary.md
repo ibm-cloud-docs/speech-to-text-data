@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-16"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -283,7 +283,7 @@ An optional double between 0.0 and 1.0 that indicates the relative weight that t
       **Availability**
     </td>
     <td style="text-align:left">
-      Generally available for all languages
+      Generally available for US English, UK English, Brazilian Portuguese, French, German, Japanese, Korean, and Spanish
     </td>
   </tr>
   <tr>
@@ -328,7 +328,7 @@ An optional string that identifies a grammar that is to be used for speech recog
       **Availability**
     </td>
     <td style="text-align:left">
-      Beta for all languages
+      Beta for US English, UK English, Brazilian Portuguese, French, German, Japanese, Korean, and Spanish
     </td>
   </tr>
   <tr>
@@ -553,7 +553,7 @@ An optional customization ID for a custom language model that includes terminolo
       **Availability**
     </td>
     <td style="text-align:left">
-      Generally available for all languages
+      Generally available for US English, UK English, Brazilian Portuguese, French, German, Japanese, Korean, and Spanish
     </td>
   </tr>
   <tr>
@@ -913,7 +913,7 @@ An optional boolean that indicates whether the service identifies which individu
       **Availability**
     </td>
     <td style="text-align:left">
-      Beta for US English, Japanese, and Spanish
+      Beta for US English, Japanese, and Spanish (broadband and narrowband models) and UK English (narrowband model only)
     </td>
   </tr>
   <tr>
