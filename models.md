@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-26"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -51,9 +51,19 @@ Table 1 lists the supported models for each language. If you omit the `model` pa
     <th style="text-align:center">Narrowband model</th>
   </tr>
   <tr>
+    <td>Brazilian Portuguese</td>
+    <td style="text-align:center"><code>pt-BR_BroadbandModel</code></td>
+    <td style="text-align:center"><code>pt-BR_NarrowbandModel</code></td>
+  </tr>
+  <tr>
     <td>French</td>
     <td style="text-align:center"><code>fr-FR_BroadbandModel</code></td>
     <td style="text-align:center"><code>fr-FR_NarrowbandModel</code></td>
+  </tr>
+  <tr>
+    <td>German</td>
+    <td style="text-align:center"><code>de-DE_BroadbandModel</code></td>
+    <td style="text-align:center"><code>de-DE_NarrowbandModel</code></td>
   </tr>
   <tr>
     <td>Japanese</td>
@@ -66,9 +76,24 @@ Table 1 lists the supported models for each language. If you omit the `model` pa
     <td style="text-align:center"><code>ko-KR_NarrowbandModel</code></td>
   </tr>
   <tr>
+    <td>Mandarin Chinese</td>
+    <td style="text-align:center"><code>zh-CN_BroadbandModel</code></td>
+    <td style="text-align:center"><code>zh-CN_NarrowbandModel</code></td>
+  </tr>
+  <tr>
+    <td>Modern Standard Arabic</td>
+    <td style="text-align:center"><code>ar-AR_BroadbandModel</code></td>
+    <td style="text-align:center">Not supported</td>
+  </tr>
+  <tr>
     <td>Spanish</td>
     <td style="text-align:center"><code>es-ES_BroadbandModel</code></td>
     <td style="text-align:center"><code>es-ES_NarrowbandModel</code></td>
+  </tr>
+  <tr>
+    <td>UK English</td>
+    <td style="text-align:center"><code>en-GB_BroadbandModel</code></td>
+    <td style="text-align:center"><code>en-GB_NarrowbandModel</code></td>
   </tr>
   <tr>
     <td>US English</td>
@@ -137,15 +162,15 @@ curl -X GET
 {
   "models": [
     {
-      "name": "en-US_BroadbandModel",
-      "language": "en-US",
-      "url": "{url}/v1/models/en-US_BroadbandModel",
-      "rate": 16000,
+      "name": "pt-BR_NarrowbandModel",
+      "language": "pt-BR",
+      "url": "{url}/v1/models/pt-BR_NarrowbandModel",
+      "rate": 8000,
       "supported_features": {
-        "custom_language_model": true,
-        "speaker_labels": true
+        "custom_language_model": false,
+        "speaker_labels": false
       },
-      "description": "US English broadband model."
+      "description": "Brazilian Portuguese narrowband model."
     },
     {
       "name": "ko-KR_BroadbandModel",
@@ -157,6 +182,17 @@ curl -X GET
         "speaker_labels": false
       },
       "description": "Korean broadband model."
+    },
+    {
+      "name": "fr-FR_BroadbandModel",
+      "language": "fr-FR",
+      "url": "{url}/v1/models/fr-FR_BroadbandModel",
+      "rate": 16000,
+      "supported_features": {
+        "custom_language_model": true,
+        "speaker_labels": true
+      },
+      "description": "French broadband model."
     },
     . . .
   ]

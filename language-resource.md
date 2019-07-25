@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-16"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -128,28 +128,36 @@ More sentences result in better accuracy. But the service does limit a model to 
 
 When you add a corpus file, the service analyzes the file's contents. It extracts any new (OOV) words that it finds and adds each OOV word to the custom model's words resource. To distill the most meaning from the content, the service tokenizes and parses the data that it reads from a corpus file. The following sections describe how the service parses a corpus file for each supported language.
 
-#### Parsing of US English, French, and Spanish
+#### Parsing of English, French, German, Spanish, and Brazilian Portuguese
 {: #corpusLanguages}
 
-The following descriptions apply to US English, French, and Spanish.
+The following descriptions apply to US and UK English, French, German, Spanish, and Brazilian Portuguese.
 
 -   Converts numbers to their equivalent words, for example:
     -   *For English,* `500` becomes `five hundred`, and `0.15` becomes `zero point fifteen`.
     -   *For French,* `500` becomes `cinq cents`, and `0,15` becomes <code>z&eacute;ro virgule quinze</code>.
+    -   *For German,* `500` becomes <code>f&uuml;nfhundert</code>, and `0,15` becomes <code>null punkt f&uuml;nfzehn</code>.
     -   *For Spanish,* `500` becomes `quinientos`, and `0,15` becomes `cero coma quince`.
+    -   *For Brazilian Portuguese,* `500` becomes `quinhentos`, and `0,15` becomes `zero ponto quinze`.
 -   Converts tokens that include certain symbols to meaningful string representations, for example:
     -   Converts a `$` (dollar sign) and a number:
         -   *For English,* `$100` becomes `one hundred dollars`.
         -   *For French,* `$100` becomes `cent dollars`.
+        -   *For German,* `$100` and `100$` become `einhundert dollar`.
         -   *For Spanish,* `$100`  and `100$` become <code>cien d&oacute;lares</code> (or `cien pesos` if the dialect is `es-LA`).
+        -   *For Brazilian Portuguese,* `$100` and `100$` become <code>cem d&oacute;lares</code>.
     -   Converts a <code>&euro;</code> (euro sign) and a number:
         -   *For English,* <code>&euro;100</code> becomes `one hundred euros`.
         -   *For French,* <code>&euro;100</code> becomes `cent euros`.
+        -   *For German,* <code>&euro;100</code> and <code>100&euro;</code> become `einhundert euro`.
         -   *For Spanish,* <code>&euro;100</code> and <code>100&euro;</code> become `cien euros`.
+        -   *For Brazilian Portuguese,* <code>&euro;100</code> and <code>100&euro;</code> become `cem euros`.
     -   Converts a `%` (percent sign) preceded by a number:
         -   *For English,* `100%` becomes `one hundred percent`.
         -   *For French,* `100%` becomes `cent pour cent`.
+        -   *For German,* `100%` becomes `einhundert prozent`.
         -   *For Spanish,* `100%` becomes `cien por ciento`.
+        -   *For Brazilian Portuguese,* `100%` becomes `cem por cento`.
 
     This list is not exhaustive. The service makes similar adjustments for other characters as needed.
 -   Processes non-alphanumeric, punctuation, and special characters depending on their context. For example, the service removes a `$` (dollar sign) or <code>&euro;</code> (euro symbol) unless it is followed by a number. Processing is context-dependent and consistent across the supported languages.
@@ -250,18 +258,29 @@ The `sounds_like` field specifies how a word is pronounced by speakers. By defau
 
 Speech recognition uses statistical algorithms to analyze audio, so adding a word does not guarantee that the service transcodes it with complete accuracy. When you add a word, consider how it might be pronounced. Use the `sounds_like` field to provide various pronunciations that reflect how a word can be spoken. The following sections provide language-specific guidelines for specifying a sounds-like pronunciation.
 
-#### Guidelines for US English
+#### Guidelines for English (US and UK)
 {: #wordLanguages-enUS-enGB}
+
+*Guidelines for both US and UK English:*
 
 -   Use English alphabetic characters: `a-z` and `A-Z`.
 -   Use real or made-up words that are pronounceable in English for words that are difficult to pronounce, for example, `shuchesnie` for the word `Sczcesny`.
 -   Substitute equivalent English letters for non-English letters, for example, `s` for <code>&ccedil;</code> or `ny` for <code>&ntilde;</code>.
 -   Substitute non-accented letters for accented letters, for example, `a` for <code>&agrave;</code> or `e` for <code>&egrave;</code>.
 -   You can include multiple words that are separated by spaces, but the service enforces a maximum of 40 total characters not including spaces.
+
+*Guidelines for US English only:*
+
 -   To pronounce a single letter, use the letter followed by a period. If the period is followed by another character, be sure to use a space between the period and the next character. For example, use `N. C. A. A.`, *not* `N.C.A.A.`
 -   Use the spelling of numbers, for example, `seventy-five` for `75`.
 
-#### Guidelines for French and Spanish
+*Guidelines for UK English only:*
+
+-   You **cannot** use periods or dashes in sounds-like pronunciations for UK English.
+-   To pronounce a single letter, use the letter followed by a space. For example, use `N C A A`, *not* `N. C. A. A.`, `N.C.A.A.`, or `NCAA`.
+-   Use the spelling of numbers without dashes, for example, `seventy five` for `75`.
+
+#### Guidelines for French, German, Spanish, and Brazilian Portuguese
 {: #wordLanguages-esES-frFR}
 
 -   You **cannot** use dashes in sounds-like pronunciations.
@@ -270,7 +289,9 @@ Speech recognition uses statistical algorithms to analyze audio, so adding a wor
 -   Use real or made-up words that are pronounceable in the language for words that are difficult to pronounce.
 -   Use the spelling of numbers without dashes, for example, for `75` use
     -   *French:* `soixante quinze`
+    -   *German:* <code>f&uuml;nfundsiebzig</code>
     -   *Spanish:* `setenta y cinco`
+    -   *Brazilian Portuguese:* `setenta e cinco`
 -   You can include multiple words that are separated by spaces, but the service enforces a maximum of 40 total characters not including spaces.
 
 #### Guidelines for Japanese

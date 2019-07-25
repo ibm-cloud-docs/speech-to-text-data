@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-24"
+lastupdated: "2019-07-24"
 
 subcollection: speech-to-text-data
 
@@ -38,7 +38,7 @@ The steps for creating a custom language model are iterative. You can add corpor
 
 You can also add grammars to a custom language model. Grammars restrict the service's response to only those words that are recognized by a grammar. For more information, see [Using grammars with custom language models](/docs/services/speech-to-text-data?topic=speech-to-text-data-grammars).
 
-Language model customization is generally available for all supported languages.
+Language model customization is available for most languages. For more information, see [Language support for customization](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
 {: note}
 
 ## Create a custom language model
