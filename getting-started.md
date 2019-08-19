@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-08-19"
 
 subcollection: speech-to-text-data
 
@@ -23,7 +23,7 @@ subcollection: speech-to-text-data
 {:swift: .ph data-hd-programlang='swift'}
 {:download: .download}
 
-# Getting started tutorial
+# Getting started with {{site.data.keyword.speechtotextshort}}
 {: #gettingStarted}
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} transcribes audio to text to enable speech transcription capabilities for applications. This curl-based tutorial can help you get started quickly with the service. The examples show you how to call the service's `POST /v1/recognize` method to request a transcript.
