@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-29"
 
 subcollection: speech-to-text-data
 
@@ -24,6 +24,8 @@ subcollection: speech-to-text-data
 
 # About
 {: #about}
+
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on August 30, 2019. The service now offers beta models for five additional Spanish dialects: Argentinian, Chilean, Colombian, Mexican, and Peruvian. The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift, and it offers FISMA support. For more information, see the [Version 1.0.1 service update](/docs/services/speech-to-text-data?topic=speech-to-text-data-release-notes#v101) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech recognition capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -88,12 +90,30 @@ Most interfaces also support the following common output features:
 ## Language support
 {: #languages}
 
-The service offers models for the following languages: Brazilian Portuguese, French, German, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Spanish, UK English, and US English. The service does not support all features for all languages. Moreover, it supports some features as generally available (GA) for production use and others as beta offerings for different languages.
+The service offers models for the following languages and dialects:
 
+-   Arabic (Modern Standard)
+-   Brazilian Portuguese
+-   Chinese (Mandarin)
+-   English (United Kingdom and United States)
+-   French
+-   German
+-   Japanese
+-   Korean
+-   Spanish (Argentinian, Castilian, Chilean, Colombian, Mexican, and Peruvian)
+
+The service does not support all features for all languages. Moreover, it supports some features as generally available (GA) for production use and others as beta offerings for different languages.
+
+-   The Spanish Castilian dialect is generally available. The other five Spanish dialects are beta.
 -   The WebSocket and synchronous and asynchronous HTTP interfaces are generally available for all languages.
 -   The service offers both broadband models and narrowband models for all languages. For more information, see [Languages and models](/docs/services/speech-to-text-data?topic=speech-to-text-data-models).
 -   Some speech recognition features are available only for some languages and only with some interfaces. For more information, see the [Parameter summary](/docs/services/speech-to-text-data?topic=speech-to-text-data-summary).
 -   The language model customization interface is generally available for all languages. The acoustic model customization interface is available as beta functionality for all languages. For more information, see [Language support for customization](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
+
+## FISMA support
+{: #fisma}
+
+Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} offerings purchased on or after August 30, 2019 (version 1.0.1). {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} is FISMA High Ready.
 
 ## Try out the service
 {: #tryOut}
