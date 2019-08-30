@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-29"
 
 subcollection: speech-to-text-data
 
@@ -31,9 +31,34 @@ The following versions of {{site.data.keyword.speechtotextdatafull}} for {{site.
 ## Known limitations
 {: #limitations}
 
-{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} has no known limitations.
+No known limitations at this time.
 
-## Version 1.0.0 (June 2019)
+## Version 1.0.1 (30 August 2019)
+{: #v101}
+
+{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.0.1 is now available. The service now works with {{site.data.keyword.icp4dfull_notm}} 2.1.0.1. The release includes the following changes:
+
+-   The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift. For installation instructions, see [Installing Cloud Pak for Data on Red Hat OpenShift](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/openshift.html){: external} and [Installing the Watson Speech to Text add-on](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/speech-to-text-install.html){: external}.
+-   The service now offers broadband and narrowband language models in six Spanish dialects:
+
+    -   Argentinian Spanish (`es-AR_BroadbandModel` and `es-AR_NarrowbandModel`)
+    -   Castilian Spanish (`es-ES_BroadbandModel` and `es-ES_NarrowbandModel`)
+    -   Chilean Spanish (`es-CL_BroadbandModel` and `es-CL_NarrowbandModel`)
+    -   Colombian Spanish (`es-CO_BroadbandModel` and `es-CO_NarrowbandModel`)
+    -   Mexican Spanish (`es-MX_BroadbandModel` and `es-MX_NarrowbandModel`)
+    -   Peruvian Spanish (`es-PE_BroadbandModel` and `es-PE_NarrowbandModel`)
+
+    The Castilian Spanish models are not new. They are generally available for speech recognition and language model customization, and beta for acoustic model customization.
+
+    The models for the other five dialects are new and are beta for all uses. Because they are beta, these additional dialects might not be ready for production use and are subject to change. They are initial offerings that are expected to improve in quality with time and usage.
+
+    For more information, see the following sections:
+
+    -   [Supported language models](/docs/services/speech-to-text-data?topic=speech-to-text-data-models#modelsList)
+    -   [Language support for customization](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport)
+-   Federal Information Security Management Act (FISMA) support is now available for {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. The service is FISMA High Ready.
+
+## Version 1.0.0 (28 June 2019)
 {: #v100}
 
 The initial release of the service. {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/services/speech-to-text?topic=speech-to-text-about#about){: external}.
