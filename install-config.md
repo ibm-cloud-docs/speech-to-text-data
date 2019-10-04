@@ -25,8 +25,13 @@ subcollection: speech-to-text-data
 # Installing the service
 {: #install}
 
-Use this installation method to install {{site.data.keyword.texttospeechdatafull}} if you do not have an {{site.data.keyword.icp4dfull}} cluster. These instructions describe how to install {{site.data.keyword.icp4dfull}} as a standalone deployment or as a Red Hat Openshift V3.11 deployment. You then install {{site.data.keyword.speechtotextshort}} to the deployment as an add-on.
+Use this installation method to install {{site.data.keyword.texttospeechdatafull}} if you do not have an {{site.data.keyword.icp4dfull}} cluster. These instructions describe how to install {{site.data.keyword.icp4dfull}} as a stand-alone deployment or as a Red Hat Openshift V3.11 deployment. You then install {{site.data.keyword.speechtotextshort}} to the deployment as an add-on.
 {: shortdesc}
+
+## Installation
+{: #installation-pointer}
+
+To install and configure {{site.data.keyword.texttospeechdatafull}} for {{site.data.keyword.icp4dfull}}, see [Installing the Watson Speech to Text add-on](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/speech-to-text-install.html){: external}.
 
 ## Application details
 {: #app-details}
@@ -34,7 +39,7 @@ Use this installation method to install {{site.data.keyword.texttospeechdatafull
 ### Microservices
 {: #microservices}
 
-Microservices are individual components that together comprise a service. {{site.data.keyword.texttospeechdatashort}} consists of the following microservices:
+Microservices are individual components that together comprise a service. {{site.data.keyword.speechtotextshort}} consists of the following microservices:
 
   - **sttRuntime**: The {{site.data.keyword.speechtotextshort}} runtime.
   - **sttAMPatcher**: The {{site.data.keyword.speechtotextshort}} acoustic model (AM) patcher.
