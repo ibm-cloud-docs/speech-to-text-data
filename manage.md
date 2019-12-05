@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-11-20"
 
 subcollection: speech-to-text-data
 
@@ -36,13 +36,13 @@ Ensure that you have the following prerequisites installed and working correctly
 
 1. Install and configure the following command-line tools:
 
-  - {{site.data.keyword.icp4dfull_notm}} 2.1.0.1 or later, including the IBM Cloud Private CLI: [`cloudctl`](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_cli.html){: external}
-  - Kubernetes 1.12.4 or later: [`kubectl`](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/kubectl-access.html){: external}
-  - Helm 2.9.1 or later: [`helm`](https://helm.sh){: external}
+  - {{site.data.keyword.icp4dfull_notm}} v2.1.0.1 or v2.5, including the IBM Cloud Private CLI: [`cloudctl`](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_cli.html){: external}
+  - Kubernetes v1.12.4 or later: [`kubectl`](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/kubectl-access.html){: external}
+  - Helm v2.9.1 or later: [`helm`](https://helm.sh){: external}
 
 1.  Start `helm`:
 
-    ```bash
+    ```sh
     helm init --client-only
     ```
     {: pre}
@@ -51,7 +51,7 @@ Ensure that you have the following prerequisites installed and working correctly
 
     - Test the IBM Cloud Private CLI (`cloudctl`):
 
-      ```bash
+      ```sh
       cloudctl login -a https://{hostname}:8443 -u {admin_user_id} -p {admin_password}
       ```
       {: pre}
@@ -61,7 +61,7 @@ Ensure that you have the following prerequisites installed and working correctly
 
     - Test Kubernetes (`kubectl`):
 
-      ```bash
+      ```sh
       kubectl get namespaces
       ```
       {: pre}
@@ -71,7 +71,7 @@ Ensure that you have the following prerequisites installed and working correctly
 
     - Test Helm (`helm`):
 
-      ```bash
+      ```sh
       helm version --tls
       ```
       {: pre}
@@ -82,29 +82,29 @@ Ensure that you have the following prerequisites installed and working correctly
 The following are some of the tasks you can perform to monitor and maintain your {{site.data.keyword.speechtotextshort}} instance.
 
   - Identify the cluster nodes to which the product is deployed:
-    ```bash
+    ```sh
     kubectl get pods -o wide | grep -v Completed
     ```
     {: pre}
 
   - List the number of replicas of each microservice in a given `{namespace}`:
-    ```bash
+    ```sh
     kubectl get deploy -n {namespace}
     ```
     {: pre}
     or
-    ```bash
+    ```sh
     kubectl get statefulset -n {namespace}
     ```
     {: pre}
 
   - Change (increase or decrease) the number of replicas:
-    ```bash
+    ```sh
     kubectl scale deploy {pod_name} --replicas={number}
     ```
     {: pre}
     or
-    ```bash
+    ```sh
     kubectl scale statefulsets {set_name} --replicas={number}
     ```
     {: pre}
@@ -142,29 +142,29 @@ If you plan to use SAML for single sign-on (SSO), complete [Configuring single s
 The following are some of the tasks you can perform to monitor and maintain your {{site.data.keyword.speechtotextshort}} instance.
 
   - Identify the cluster nodes to which the product is deployed:
-    ```bash
+    ```sh
     kubectl get pods -o wide | grep -v Completed
     ```
     {: pre}
 
   - List the number of replicas of each microservice in a given `{namespace}`:
-    ```bash
+    ```sh
     kubectl get deploy -n {namespace}
     ```
     {: pre}
     or
-    ```bash
+    ```sh
     kubectl get statefulset -n {namespace}
     ```
     {: pre}
 
   - Change (increase or decrease) the number of replicas:
-    ```bash
+    ```sh
     kubectl scale deploy {pod_name} --replicas={number}
     ```
     {: pre}
     or
-    ```bash
+    ```sh
     kubectl scale statefulsets {set_name} --replicas={number}
     ```
     {: pre}
@@ -173,7 +173,6 @@ The following are some of the tasks you can perform to monitor and maintain your
 
     By default, {{site.data.keyword.icp4dfull_notm}} automatically logs information from each service. For more information, see [Viewing logs](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/logs.html){: external}.
 
-## Managing user access
 {: #manage-user-access}
 
 After you provision an instance, you can share the URL for the service with other users. However, those users can  log in to the service only if you give them access.
@@ -214,7 +213,7 @@ For information about scaling deployments and StatefulSets, see [Installing the 
 
     - `{cluster_CA_domain}`: your cluster CA domain name; for example, `mycluster.icp`.
 
-3. Open Kibana by accessing *Side Menu -> Platform -> Logging*
+3. Open Kibana by accessing **Side Menu -> Platform -> Logging**.
 
 4. To view and query logs, see [Viewing and querying logs](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/manage_metrics/logging_elk.html#viewing-and-querying-logs).
 
