@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-05"
 
 subcollection: speech-to-text-data
 
@@ -36,9 +36,6 @@ Follow these steps to create a custom language model for {{site.data.keyword.spe
 
 The steps for creating a custom language model are iterative. You can add corpora, add words, and train or retrain a model as often as needed.
 
-You can create a maximum of 1024 custom language models, per credential. The service returns an error if you attempt to create more than 1024 models. You do not lose any models, but you cannot create any more until your model count is below the limit.
-{: note}
-
 You can also add grammars to a custom language model. Grammars restrict the service's response to only those words that are recognized by a grammar. For more information, see [Using grammars with custom language models](/docs/services/speech-to-text-data?topic=speech-to-text-data-grammars).
 
 Language model customization is available for most languages. For more information, see [Language support for customization](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
@@ -47,7 +44,7 @@ Language model customization is available for most languages. For more informati
 ## Create a custom language model
 {: #createModel-language}
 
-You use the `POST /v1/customizations` method to create a new custom language model. You can create any number of custom language models, but you can use only one model at a time with a speech recognition request. The method accepts a JSON object that defines the attributes of the new custom model as the body of the request.
+You use the `POST /v1/customizations` method to create a new custom language model. The method accepts a JSON object that defines the attributes of the new custom model as the body of the request. You can use only one model at a time with a speech recognition request.
 
 <table>
   <caption>Table 1. Attributes of a new custom language model</caption>
@@ -141,6 +138,8 @@ The example returns the customization ID of the new model. Each custom model is 
 {: codeblock}
 
 The new custom model is owned by the instance of the service whose credentials are used to create it. For more information, see [Ownership of custom models](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#customOwner).
+
+You can create a maximum of 1024 custom language models per owning credentials. The service returns an error if you attempt to create more than 1024 models. You do not lose any models, but you cannot create any more until your model count is below the limit.
 
 ## Add a corpus to the custom language model
 {: #addCorpus}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-12-05"
 
 subcollection: speech-to-text-data
 
@@ -33,12 +33,21 @@ The following versions of {{site.data.keyword.speechtotextdatafull}} for {{site.
 
 No known limitations at this time.
 
+## Version 1.1.2 (27 November 2019)
+{: #v112}
+
+{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.1.2 is now available. For more information about installing the new version of the service, see [Installing the Watson Speech to Text add-on](/docs/services/speech-to-text-data?topic=speech-to-text-data-stt-installing).
+
+The release includes the following change:
+
+-   You can create no more than 1024 custom language models and no more than 1024 custom acoustic models per owning credentials. For more information, see [Maximum number of custom models](/docs/services/speech-to-text-data?topic=speech-to-text-data-customization#customMaximum).
+
 ## Version 1.0.1 (30 August 2019)
 {: #v101}
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.0.1 is now available. The service now works with {{site.data.keyword.icp4dfull_notm}} 2.1.0.1. The release includes the following changes:
 
--   The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift. For installation instructions, see [Installing Cloud Pak for Data on Red Hat OpenShift](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/openshift.html){: external} and [Installing the Watson Speech to Text add-on](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/speech-to-text-install.html){: external}.
+-   The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift. For installation instructions, see [Installing Cloud Pak for Data on Red Hat OpenShift](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/openshift.html){: external} and [Installing the Watson Speech to Text add-on](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/watson/speech-to-text-install.html){: external}.
 -   The service now offers broadband and narrowband language models in six Spanish dialects:
 
     -   Argentinian Spanish (`es-AR_BroadbandModel` and `es-AR_NarrowbandModel`)
@@ -61,7 +70,7 @@ No known limitations at this time.
 ## Version 1.0.0 (28 June 2019)
 {: #v100}
 
-The initial release of the service. {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/services/speech-to-text?topic=speech-to-text-about#about){: external}.
+The initial release of the service. {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/services/speech-to-text?topic=speech-to-text-about){: external}.
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} differs from the public {{site.data.keyword.speechtotextshort}} service in the following ways. You might find this information helpful if you are already familiar with the {{site.data.keyword.speechtotextshort}} service on the public {{site.data.keyword.cloud_notm}}.
 
