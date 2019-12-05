@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2019
-lastupdated: "2019-08-29"
+lastupdated: "2019-12-05"
 
 subcollection: speech-to-text-data
 
@@ -25,7 +25,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on August 30, 2019. The service now offers beta models for five additional Spanish dialects: Argentinian, Chilean, Colombian, Mexican, and Peruvian. The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift, and it offers FISMA support. For more information, see the [Version 1.0.1 service update](/docs/services/speech-to-text-data?topic=speech-to-text-data-release-notes#v101) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on November 27, 2019. For more information, see the [Version 1.1.2 service update](/docs/services/speech-to-text-data?topic=speech-to-text-data-release-notes#v112) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech recognition capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -38,7 +38,7 @@ subcollection: speech-to-text-data
 
 The service is ideal for clients who need to extract high-quality speech transcripts from call center audio. Clients in industries such as financial services, healthcare, insurance, and telecommunication can develop cloud-native applications for customer care, customer voice, agent assistance, and other solutions.
 
-For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing the service](/docs/services/speech-to-text-data?topic=speech-to-text-data-install).
+For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing the Watson Speech to Text add-on](/docs/services/speech-to-text-data?topic=speech-to-text-data-stt-installing).
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/services/speech-to-text?topic=speech-to-text-about#about){: external}.
 {: note}
