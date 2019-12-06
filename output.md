@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-12-06"
 
 subcollection: speech-to-text-data
 
@@ -839,6 +839,8 @@ Smart formatting is based on the presence of obvious keywords in the transcript.
 -   Times are identified by keywords such as `AM`, `PM`, or `EST`.
 -   Military times are converted if they are identified by the keyword `hours`.
 -   Phone numbers must be either `911` or a number with 10 or 11 digits that starts with the number `1`.
+-   In US English, dollar, cent, and euro values are replaced with their respective currency symbols.
+-   In Spanish, dolar, peso, peseta, libras esterlinas, libra, and euro values are replaced with their respective currency symbols.
 
 #### Japanese
 {: #smartFormattingJapanese}
@@ -848,6 +850,7 @@ Smart formatting is based on the presence of obvious keywords in the transcript.
 -   English words are converted to ASCII (*hankaku*) characters. For example, <code>&#65321;&#65314;&#65325;</code> is converted to `IBM`.
 -   Ambiguous terms might not be converted if sufficient context is unavailable. For example, it is unclear whether <code>&#19968;&#26178;</code> and <code>&#21313;&#20998;</code> refer to times.
 -   Punctuation is handled in the same way with or without smart formatting. For example, based on probability calculations, one of <code>&#12459;&#12531;&#12510;</code> or `,` is selected.
+-   Yen values are not replaced with the yen currency symbol.
 
 ### Smart formatting example
 {: #smartFormattingExample}
