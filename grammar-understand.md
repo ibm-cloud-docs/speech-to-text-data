@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-11"
+  years: 2018, 2020
+lastupdated: "2020-02-04"
 
 subcollection: speech-to-text-data
 
@@ -28,7 +28,7 @@ subcollection: speech-to-text-data
 The following examples introduce the {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} service's support for grammars. The examples create two simple ABNF grammars and show possible results when they are used for speech recognition. The examples illustrate the importance of examining the confidence score that the service includes with a transcript.
 {: shortdesc}
 
-The examples provide only the results of speech recognition requests. For examples that show how to pass a grammar for speech recognition, see [Using a grammar for speech recognition](/docs/services/speech-to-text-data?topic=speech-to-text-data-grammarUse). The examples are also very basic. For examples of more complex grammars, see [Example grammars](/docs/services/speech-to-text-data?topic=speech-to-text-data-grammarExamples).
+The examples provide only the results of speech recognition requests. For examples that show how to pass a grammar for speech recognition, see [Using a grammar for speech recognition](/docs/speech-to-text-data?topic=speech-to-text-data-grammarUse). The examples are also very basic. For examples of more complex grammars, see [Example grammars](/docs/speech-to-text-data?topic=speech-to-text-data-grammarExamples).
 
 ## Single-phrase matches: The yesno grammar
 {: #yesnoGrammar}

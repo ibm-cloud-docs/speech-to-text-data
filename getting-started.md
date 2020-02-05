@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-05"
+  years: 2018, 2020
+lastupdated: "2020-02-04"
 
 keywords: speech to text,IBM cloud pak for data,getting started,tutorial,transcribe audio,speech recognition
 
@@ -36,7 +36,7 @@ subcollection: speech-to-text-data
 
 To use {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, you must first complete the following steps:
 
-1.  Provision an instance of {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. For more information about provisioning, see [Installing the Watson Speech to Text add-on](/docs/services/speech-to-text-data?topic=speech-to-text-data-stt-installing).
+1.  Provision an instance of {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. For more information about provisioning, see [Installing the Watson Speech to Text add-on](/docs/speech-to-text-data?topic=speech-to-text-data-stt-installing).
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
 1.  Click the {{site.data.keyword.speechtotextshort}} instance to open the overview page. Copy the `{token}` and `{URL}` credential values.
 
@@ -160,7 +160,7 @@ of severe thunderstorms swept through Colorado and Sunday "
 
 ## Next steps
 
--   Learn more about the interfaces and SDKs that are available for making speech recognition requests in the [Overview for developers](/docs/services/speech-to-text-data?topic=speech-to-text-data-developerOverview).
--   Learn about making requests to the service in [Making requests to the service](/docs/services/speech-to-text-data?topic=speech-to-text-data-making-requests).
--   See basic speech recognition requests for each of the service's interfaces in [Making a recognition request](/docs/services/speech-to-text-data?topic=speech-to-text-data-basic-request).
+-   Learn more about the interfaces and SDKs that are available for making speech recognition requests in the [Overview for developers](/docs/speech-to-text-data?topic=speech-to-text-data-developerOverview).
+-   Learn about making requests to the service in [Making requests to the service](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests).
+-   See basic speech recognition requests for each of the service's interfaces in [Making a recognition request](/docs/speech-to-text-data?topic=speech-to-text-data-basic-request).
 -   Find detailed information about all methods of the service's interfaces in the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.

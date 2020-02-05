@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="speech-to-text-data" audience="service" arm="350" href="/docs/services/speech-to-text-data?topic=speech-to-text-data-gettingStarted" path="services/speech-to-text-data"}
+{: .toc subcollection="speech-to-text-data" audience="service" href="/docs/speech-to-text-data?topic=speech-to-text-data-gettingStarted" path="speech-to-text-data"}
 IBM Watson Speech to Text for IBM Cloud Pak for Data
 
     {: .navgroup id="learn"}
@@ -26,7 +26,7 @@ IBM Watson Speech to Text for IBM Cloud Pak for Data
         speech-install.md
         manage.md
         speech-uninstall.md
-        [Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/speech-README.md)        
+        [Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/speech-README.md)
     making-requests.md
 
     {: .topicgroup}

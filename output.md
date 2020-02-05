@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-06"
+  years: 2018, 2020
+lastupdated: "2020-02-04"
 
 subcollection: speech-to-text-data
 
@@ -28,9 +28,9 @@ subcollection: speech-to-text-data
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} offers the following features to indicate the information that the service is to include in its transcription results for a speech recognition request. All output parameters are optional.
 {: shortdesc}
 
--   For examples of simple speech recognition requests for each of the service's interfaces, see [Making a recognition request](/docs/services/speech-to-text-data?topic=speech-to-text-data-basic-request).
--   For examples and descriptions of speech recognition responses, see [Understanding recognition results](/docs/services/speech-to-text-data?topic=speech-to-text-data-basic-response). The service returns all JSON response content in the UTF-8 character set.
--   For an alphabetized list of all available speech recognition parameters, including their status (generally available or beta), supported languages, and supported interfaces, see the [Parameter summary](/docs/services/speech-to-text-data?topic=speech-to-text-data-summary).
+-   For examples of simple speech recognition requests for each of the service's interfaces, see [Making a recognition request](/docs/speech-to-text-data?topic=speech-to-text-data-basic-request).
+-   For examples and descriptions of speech recognition responses, see [Understanding recognition results](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response). The service returns all JSON response content in the UTF-8 character set.
+-   For an alphabetized list of all available speech recognition parameters, including their status (generally available or beta), supported languages, and supported interfaces, see the [Parameter summary](/docs/speech-to-text-data?topic=speech-to-text-data-summary).
 
 ## Speaker labels
 {: #speaker_labels}
@@ -42,7 +42,7 @@ Speaker labels identify which individuals spoke which words in a multi-participa
 
 Speaker labels are optimized for two-speaker scenarios. They work best for telephone conversations that involve two people in an extended exchange. They can handle up to six speakers, but more than two speakers can result in variable performance. Two-person exchanges are typically conducted over narrowband media, but you can use speaker labels with both narrowband and broadband models.
 
-To use the feature, you set the `speaker_labels` parameter to `true` for a recognition request; the parameter is `false` by default. The service identifies speakers by individual words of the audio. It relies on a word's start and end time to identify its speaker. Therefore, enabling speaker labels also forces the `timestamps` parameter to be `true` (see [Word timestamps](/docs/services/speech-to-text-data?topic=speech-to-text-data-output#word_timestamps)).
+To use the feature, you set the `speaker_labels` parameter to `true` for a recognition request; the parameter is `false` by default. The service identifies speakers by individual words of the audio. It relies on a word's start and end time to identify its speaker. Therefore, enabling speaker labels also forces the `timestamps` parameter to be `true` (see [Word timestamps](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_timestamps)).
 
 ### Speaker labels example
 {: #speakerLabelsExample}
@@ -240,7 +240,7 @@ As a result, speaker IDs might not be sequential, contiguous, or ordered. For in
 ### Requesting interim results for speaker labels
 {: #speakerLabelsInterim}
 
-With the WebSocket interface, you can request interim results as well as speaker labels (see [Interim results](/docs/services/speech-to-text-data?topic=speech-to-text-data-output#interim)). Final results are generally better than interim results. But interim results can help identify the evolution of a transcript and the assignment of speaker labels. Interim results can indicate where transient speakers and IDs appeared or disappeared. However, the service can reuse the IDs of speakers that it initially identifies and later reconsiders and omits. Therefore, an ID might refer to two different speakers in interim and final results.
+With the WebSocket interface, you can request interim results as well as speaker labels (see [Interim results](/docs/speech-to-text-data?topic=speech-to-text-data-output#interim)). Final results are generally better than interim results. But interim results can help identify the evolution of a transcript and the assignment of speaker labels. Interim results can indicate where transient speakers and IDs appeared or disappeared. However, the service can reuse the IDs of speakers that it initially identifies and later reconsiders and omits. Therefore, an ID might refer to two different speakers in interim and final results.
 
 When you request both interim results and speaker labels, final results for long audio streams might arrive well after initial interim results are returned. It is also possible for some interim results to include only a `speaker_labels` field without the `results` and `result_index` fields. If you do not request interim results, the service returns final results that include `results` and `result_index` fields and a single `speaker_labels` field.
 
@@ -298,7 +298,7 @@ A keyword for which the service finds no matches is omitted from the array. A ke
     -   The keyword's tokens are in the same block.
     -   The tokens are either adjacent or separated by a gap of no more than 0.1 seconds.
 
-    The latter case can occur if a brief filler or non-lexical utterance, such as "uhm" or "well," lies between two tokens of the keyword. For more information, see [Hesitation markers](/docs/services/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
+    The latter case can occur if a brief filler or non-lexical utterance, such as "uhm" or "well," lies between two tokens of the keyword. For more information, see [Hesitation markers](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
 
 ### Keyword spotting example
 {: #keywordSpottingExample}
