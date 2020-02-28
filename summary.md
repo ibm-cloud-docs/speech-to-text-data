@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-27"
 
 subcollection: speech-to-text-data
 
@@ -27,19 +27,6 @@ subcollection: speech-to-text-data
 
 A summary follows of all of the parameters available for speech recognition. For more information about all methods of the {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} service, see the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
 {: shortdesc}
-
-Consider the following basic requirements when you make a speech recognition request:
-
--   Method names are case-sensitive.
--   HTTP request headers are case-insensitive.
--   HTTP and WebSocket query parameters are case-sensitive.
--   JSON field names are case-sensitive.
--   All JSON response content is in the UTF-8 character set.
-
-Also consider the following service-specific requirements:
-
--   You need to specify only the input audio. All other parameters are optional.
--   If you specify an invalid query parameter or JSON field as part of the input, the response includes a `warnings` field that describes the invalid argument. The request succeeds despite any warnings.
 
 ## access_token
 {: #summary-access-token}
@@ -312,13 +299,58 @@ An optional double between 0.0 and 1.0 that indicates the relative weight that t
   </tr>
 </table>
 
+## end_of_phrase_silence_time
+{: #summary-silence-time}
+
+An optional double between 0.0 and 120.0 that indicates the pause interval at which the service splits a transcript into multiple final results if it encounters silence. By default, the service uses a pause interval of 0.8 seconds for all languages other than Chinese, for which it uses an interval of 0.6 seconds. For more information, see [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time).
+
+<table>
+  <caption>Table 7. The end_of_phrase_silence_time parameter</caption>
+  <tr>
+    <th>Availability and usage</th>
+    <th style="vertical-align:bottom">Description</th>
+  </tr>
+  <tr>
+    <td style="text-align:left; width:30%">
+      **Availability**
+    </td>
+    <td style="text-align:left">
+      Generally available for all languages
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **WebSocket**
+    </td>
+    <td style="text-align:left">
+      Parameter of JSON <code>start</code> message
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **Synchronous HTTP**
+    </td>
+    <td style="text-align:left">
+      Query parameter of <code>POST /v1/recognize</code> method
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **Asynchronous HTTP**
+    </td>
+    <td style="text-align:left">
+      Query parameter of <code>POST /v1/recognitions</code> method
+    </td>
+  </tr>
+</table>
+
 ## grammar_name
 {: #summary-grammar-name}
 
 An optional string that identifies a grammar that is to be used for speech recognition. The service recognizes only strings that are defined by the grammar. You must specify both the name of the grammar and the customization ID of the custom language model for which the grammar is defined. For more information, see [Grammars](/docs/speech-to-text-data?topic=speech-to-text-data-input#grammars-input).
 
 <table style="width:90%">
-  <caption>Table 7. The grammar_name parameter</caption>
+  <caption>Table 8. The grammar_name parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -363,7 +395,7 @@ An optional string that identifies a grammar that is to be used for speech recog
 An optional integer that specifies the number of seconds for the service's inactivity timeout. Inactivity means that the service detects no speech in streaming audio. The default is 30 seconds. Use `-1` to indicate infinity. For more information, see [Inactivity timeout](/docs/speech-to-text-data?topic=speech-to-text-data-input#timeouts-inactivity).
 
 <table style="width:90%">
-  <caption>Table 8. The inactivity_timeout parameter</caption>
+  <caption>Table 9. The inactivity_timeout parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -408,7 +440,7 @@ An optional integer that specifies the number of seconds for the service's inact
 An optional boolean that directs the service to return intermediate hypotheses that are likely to change before the final transcript. By default (`false`), interim results are not returned. For more information, see [Interim results](/docs/speech-to-text-data?topic=speech-to-text-data-output#interim).
 
 <table style="width:90%">
-  <caption>Table 9. The interim_results parameter</caption>
+  <caption>Table 10. The interim_results parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -453,7 +485,7 @@ An optional boolean that directs the service to return intermediate hypotheses t
 An optional array of keyword strings that the service spots in the input audio. By default, keyword spotting is not performed. For more information, see [Keyword spotting](/docs/speech-to-text-data?topic=speech-to-text-data-output#keyword_spotting).
 
 <table style="width:90%">
-  <caption>Table 10. The keywords parameter</caption>
+  <caption>Table 11. The keywords parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -498,7 +530,7 @@ An optional array of keyword strings that the service spots in the input audio. 
 An optional double between 0.0 and 1.0 that indicates the minimum threshold for a positive keyword match. By default, keyword spotting is not performed. For more information, see [Keyword spotting](/docs/speech-to-text-data?topic=speech-to-text-data-output#keyword_spotting).
 
 <table style="width:90%">
-  <caption>Table 11. The keywords_threshold parameter</caption>
+  <caption>Table 12. The keywords_threshold parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -543,7 +575,7 @@ An optional double between 0.0 and 1.0 that indicates the minimum threshold for 
 An optional customization ID for a custom language model that includes terminology from your domain. By default, no custom model is used. For more information, see [Custom models](/docs/speech-to-text-data?topic=speech-to-text-data-input#custom-input).
 
 <table style="width:90%">
-  <caption>Table 12. The language_customization_id parameter</caption>
+  <caption>Table 13. The language_customization_id parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -588,7 +620,7 @@ An optional customization ID for a custom language model that includes terminolo
 An optional integer that specifies the maximum number of alternative hypotheses that the service returns. By default, the service returns a single final hypothesis. For more information, see [Maximum alternatives](/docs/speech-to-text-data?topic=speech-to-text-data-output#max_alternatives).
 
 <table style="width:90%">
-  <caption>Table 13. The max_alternatives parameter</caption>
+  <caption>Table 14. The max_alternatives parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -633,7 +665,7 @@ An optional integer that specifies the maximum number of alternative hypotheses 
 An optional model that specifies the language in which the audio is spoken and the rate at which it was sampled: broadband or narrowband. By default, `en-US_BroadbandModel` is used. For more information, see [Languages and models](/docs/speech-to-text-data?topic=speech-to-text-data-models).
 
 <table style="width:90%">
-  <caption>Table 14. The model parameter</caption>
+  <caption>Table 15. The model parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -678,7 +710,7 @@ An optional model that specifies the language in which the audio is spoken and t
 An optional boolean that indicates whether the service returns metrics about its processing of the input audio. By default (`false`), the service returns no processing metrics. For more information, see [Processing metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#processing_metrics).
 
 <table style="width:90%">
-  <caption>Table 15. The processing_metrics parameter</caption>
+  <caption>Table 16. The processing_metrics parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -723,7 +755,7 @@ An optional boolean that indicates whether the service returns metrics about its
 An optional float of at least 0.1 that indicates the interval at which the service is to return processing metrics. If the `processing_metrics` parameter is `true`, the service returns processing metrics every 1.0 seconds by default. For more information, see [Processing metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#processing_metrics).
 
 <table style="width:90%">
-  <caption>Table 16. The processing_metrics_interval parameter</caption>
+  <caption>Table 17. The processing_metrics_interval parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -768,7 +800,7 @@ An optional float of at least 0.1 that indicates the interval at which the servi
 An optional boolean that indicates whether the service censors profanity from a transcript. By default (`true`), profanity is filtered from the transcript. For more information, see [Profanity filtering](/docs/speech-to-text-data?topic=speech-to-text-data-output#profanity_filter).
 
 <table style="width:90%">
-  <caption>Table 17. The profanity_filter parameter</caption>
+  <caption>Table 18. The profanity_filter parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -813,7 +845,7 @@ An optional boolean that indicates whether the service censors profanity from a 
 An optional boolean that indicates whether the service redacts numeric data with three or more consecutive digits from a transcript. If you set the `redaction` parameter to `true`, the service automatically forces the `smart_formatting` parameter to be `true`. By default (`false`), numeric data is not redacted. For more information, see [Numeric redaction](/docs/speech-to-text-data?topic=speech-to-text-data-output#redaction).
 
 <table style="width:90%">
-  <caption>Table 18. The redaction parameter</caption>
+  <caption>Table 19. The redaction parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -858,7 +890,7 @@ An optional boolean that indicates whether the service redacts numeric data with
 An optional boolean that indicates whether the service converts dates, times, numbers, currency, and similar values into more conventional representations in the final transcript. For US English, the feature also converts certain keyword phrases into punctuation symbols. By default (`false`), smart formatting is not performed. For more information, see [Smart formatting](/docs/speech-to-text-data?topic=speech-to-text-data-output#smart_formatting).
 
 <table style="width:90%">
-  <caption>Table 19. The smart_formatting parameter</caption>
+  <caption>Table 20. The smart_formatting parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -903,7 +935,7 @@ An optional boolean that indicates whether the service converts dates, times, nu
 An optional boolean that indicates whether the service identifies which individuals spoke which words in a multi-participant exchange. If you set the `speaker_labels` parameter to `true`, the service automatically forces the `timestamps` parameter to be `true`. By default (`false`), speaker labels are not returned. For more information, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels).
 
 <table style="width:90%">
-  <caption>Table 20. The speaker_labels parameter</caption>
+  <caption>Table 21. The speaker_labels parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -942,13 +974,58 @@ An optional boolean that indicates whether the service identifies which individu
   </tr>
 </table>
 
+## split_transcript_at_phrase_end
+{: #summary-split-transcript}
+
+An optional boolean that indicates whether the service splits a transcript into multiple final results based on semantic features of the input such as sentences. The service bases its understanding of semantic features on the base language model, which can be further influenced by custom language models and grammars. By default (`false`), the service produces no semantic splits. For more information, see [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript).
+
+<table>
+  <caption>Table 22. The split_transcript_at_phrase_end parameter</caption>
+  <tr>
+    <th>Availability and usage</th>
+    <th style="vertical-align:bottom">Description</th>
+  </tr>
+  <tr>
+    <td style="text-align:left; width:30%">
+      **Availability**
+    </td>
+    <td style="text-align:left">
+      Generally available for all languages
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **WebSocket**
+    </td>
+    <td style="text-align:left">
+      Parameter of JSON <code>start</code> message
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **Synchronous HTTP**
+    </td>
+    <td style="text-align:left">
+      Query parameter of <code>POST /v1/recognize</code> method
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left">
+      **Asynchronous HTTP**
+    </td>
+    <td style="text-align:left">
+      Query parameter of <code>POST /v1/recognitions</code> method
+    </td>
+  </tr>
+</table>
+
 ## timestamps
 {: #summary-timestamps}
 
 An optional boolean that indicates whether the service produces timestamps for the words of the transcript. By default (`false`), timestamps are not returned. For more information, see [Word timestamps](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_timestamps).
 
 <table style="width:90%">
-  <caption>Table 21. The timestamps parameter</caption>
+  <caption>Table 23. The timestamps parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -993,7 +1070,7 @@ An optional boolean that indicates whether the service produces timestamps for t
 An optional value of `chunked` that causes the audio to be streamed to the service. By default, audio is sent all at once as a one-shot delivery. For more information, see [Audio transmission](/docs/speech-to-text-data?topic=speech-to-text-data-input#transmission).
 
 <table style="width:90%">
-  <caption>Table 22. The Transfer-Encoding parameter</caption>
+  <caption>Table 24. The Transfer-Encoding parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -1038,7 +1115,7 @@ An optional value of `chunked` that causes the audio to be streamed to the servi
 An optional double between 0.0 and 1.0 that specifies the threshold at which the service reports acoustically similar alternatives for words of the input audio. By default, word alternatives are not returned. For more information, see [Word alternatives](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_alternatives).
 
 <table style="width:90%">
-  <caption>Table 23. The word_alternatives_threshold parameter</caption>
+  <caption>Table 25. The word_alternatives_threshold parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -1083,7 +1160,7 @@ An optional double between 0.0 and 1.0 that specifies the threshold at which the
 An optional boolean that indicates whether the service provides confidence measures for the words of the transcript. By default (`false`), word confidence measures are not returned. For more information, see [Word confidence](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_confidence).
 
 <table style="width:90%">
-  <caption>Table 24. The word_confidence parameter</caption>
+  <caption>Table 26. The word_confidence parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>
@@ -1128,7 +1205,7 @@ An optional boolean that indicates whether the service provides confidence measu
 An optional string that associates a customer ID with data that is passed for recognition requests. The parameter accepts the argument `customer_id={id}`. By default, no customer ID is associated with the data. For more information, see [Information security](/docs/speech-to-text-data?topic=speech-to-text-data-information-security).
 
 <table style="width:90%">
-  <caption>Table 25. The X-Watson-Metadata parameter</caption>
+  <caption>Table 27. The X-Watson-Metadata parameter</caption>
   <tr>
     <th>Availability and usage</th>
     <th style="vertical-align:bottom">Description</th>

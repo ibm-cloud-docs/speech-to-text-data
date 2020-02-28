@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-20"
+  years: 2018, 2020
+lastupdated: "2020-02-27"
 
 subcollection: speech-to-text-data
 
@@ -22,24 +22,24 @@ subcollection: speech-to-text-data
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Uninstalling the Watson Speech to Text add-on
+# Uninstalling the {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} add-on
 {: #stt-uninstalling}
 
 You can uninstall the {{site.data.keyword.speechtotextdatafull}} add-on from {{site.data.keyword.icp4dfull}}.
 {: shortdesc}
 
-## Uninstalling the add-on
+## Uninstalling the chart
 {: #uninstall}
 
 To uninstall and delete the `{release-name}` Helm release, run the following command:
 
-```sh
+```bash
 helm delete --tls {release-name}
 ```
 
 To irrevocably uninstall and delete the `{release-name}` Helm release, run the following command:
 
-```sh
+```bash
 helm delete --purge --tls {release-name}
 ```
 
