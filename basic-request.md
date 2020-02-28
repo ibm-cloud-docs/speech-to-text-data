@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-27"
 
 subcollection: speech-to-text-data
 
@@ -34,6 +34,22 @@ The following sections show basic transcription requests for each of the service
 -   The examples use the default language model, `en-US_BroadbandModel`.
 
 [Understanding recognition results](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response) describes the service's response for these examples.
+
+## Usage requirements
+{: #basic-request-usage}
+
+Consider the following basic usage requirements when you make a speech recognition request:
+
+-   Method names are case-sensitive.
+-   HTTP request headers are case-insensitive.
+-   HTTP and WebSocket query parameters are case-sensitive.
+-   JSON field names are case-sensitive.
+-   All JSON response content is in the UTF-8 character set.
+
+Also consider the following service-specific requirements:
+
+-   You need to specify only the input audio. All other parameters are optional.
+-   If you specify an invalid query parameter or JSON field as part of the input, the response includes a `warnings` field that describes the invalid argument. The request succeeds despite any warnings.
 
 If you use a self-signed certificate, you need to disable SSL verification for a request to the service to succeed. For more information, see [Disabling SSL verification](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests#SSLverification).
 {: important}

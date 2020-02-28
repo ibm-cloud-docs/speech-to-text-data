@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-27"
 
 subcollection: speech-to-text-data
 
@@ -25,7 +25,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on November 27, 2019. For more information, see the [Version 1.1.2 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v112) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 28 February 2020. You can now specify the pause interval at which the service splits a transcript into multiple final results. You can also direct the service to split the transcript into multiple final results for semantic features such as sentences. For more information, see the [Version 1.1.3 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v113) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech recognition capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -84,6 +84,8 @@ Most interfaces also support the following common output features:
 -   [Smart formatting](/docs/speech-to-text-data?topic=speech-to-text-data-output#smart_formatting) converts dates, times, numbers, currency values, phone numbers, and internet addresses into more readable, conventional forms in final transcripts. For US English, you can also provide keyword phrases to include certain punctuation symbols in final transcripts. Smart formatting is supported for US English, Japanese, and Spanish audio. (Beta functionality.)
 -   [Numeric redaction](/docs/speech-to-text-data?topic=speech-to-text-data-output#redaction) redacts, or masks, numeric data from a final transcript. Redaction is intended to remove sensitive personal information, such as credit card numbers, from transcripts. The feature is supported for US English, Japanese, and Korean audio. (Beta functionality.)
 -   [Profanity filtering](/docs/speech-to-text-data?topic=speech-to-text-data-output#profanity_filter) censors profanity from US English transcripts.
+-   [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time) specifies the duration of the pause interval at which the service splits a transcript into multiple final results in response to silence.
+-   [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript) directs the services to split a transcript into multiple final results for semantic features such as sentences. The service bases its understanding of semantic features on the base language model that you use with a request. Custom language models and grammars can also influence how and where the service splits a transcript.
 -   [Processing metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#processing_metrics) provide detailed timing information about the service's analysis of the input audio.
 -   [Audio metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#audio_metrics) provide detailed information about the signal characteristics of the input audio.
 

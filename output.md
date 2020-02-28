@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-27"
 
 subcollection: speech-to-text-data
 
@@ -42,7 +42,7 @@ Speaker labels identify which individuals spoke which words in a multi-participa
 
 Speaker labels are optimized for two-speaker scenarios. They work best for telephone conversations that involve two people in an extended exchange. They can handle up to six speakers, but more than two speakers can result in variable performance. Two-person exchanges are typically conducted over narrowband media, but you can use speaker labels with both narrowband and broadband models.
 
-To use the feature, you set the `speaker_labels` parameter to `true` for a recognition request; the parameter is `false` by default. The service identifies speakers by individual words of the audio. It relies on a word's start and end time to identify its speaker. Therefore, enabling speaker labels also forces the `timestamps` parameter to be `true` (see [Word timestamps](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_timestamps)).
+To use the feature, you set the `speaker_labels` parameter to `true` for a recognition request; the parameter is `false` by default. The service identifies speakers by individual words of the audio. It relies on a word's start and end time to identify its speaker. Therefore, enabling speaker labels also forces the `timestamps` parameter to be `true`. For more information, see [Word timestamps](/docs/speech-to-text-data?topic=speech-to-text-data-output#word_timestamps).
 
 ### Speaker labels example
 {: #speakerLabelsExample}
@@ -240,7 +240,7 @@ As a result, speaker IDs might not be sequential, contiguous, or ordered. For in
 ### Requesting interim results for speaker labels
 {: #speakerLabelsInterim}
 
-With the WebSocket interface, you can request interim results as well as speaker labels (see [Interim results](/docs/speech-to-text-data?topic=speech-to-text-data-output#interim)). Final results are generally better than interim results. But interim results can help identify the evolution of a transcript and the assignment of speaker labels. Interim results can indicate where transient speakers and IDs appeared or disappeared. However, the service can reuse the IDs of speakers that it initially identifies and later reconsiders and omits. Therefore, an ID might refer to two different speakers in interim and final results.
+With the WebSocket interface, you can request interim results as well as speaker labels (for more information, see [Interim results](/docs/speech-to-text-data?topic=speech-to-text-data-output#interim)). Final results are generally better than interim results. But interim results can help identify the evolution of a transcript and the assignment of speaker labels. Interim results can indicate where transient speakers and IDs appeared or disappeared. However, the service can reuse the IDs of speakers that it initially identifies and later reconsiders and omits. Therefore, an ID might refer to two different speakers in interim and final results.
 
 When you request both interim results and speaker labels, final results for long audio streams might arrive well after initial interim results are returned. It is also possible for some interim results to include only a `speaker_labels` field without the `results` and `result_index` fields. If you do not request interim results, the service returns final results that include `results` and `result_index` fields and a single `speaker_labels` field.
 
@@ -270,7 +270,7 @@ To use keyword spotting, you must specify both of the following parameters:
 
     For US English, the service normalizes each keyword to match spoken versus written strings. For example, it normalizes numbers to match how they are spoken as opposed to written. For other languages, keywords must be specified as they are spoken.
 
-    You can spot a maximum of 1000 keywords with a single request. Keywords are case-insensitive.
+    You can spot a maximum of 1000 keywords with a single request. A single keyword can have a maximum length of 1024 characters, though the maximum effective length for double-byte languages might be shorter. Keywords are case-insensitive.
 -   Use the `keywords_threshold` parameter to specify a probability between 0.0 and 1.0 for a keyword match. The threshold indicates the lower bound for the level of confidence the service must have for a word to match the keyword. A keyword is spotted in the transcript only if its confidence is greater than or equal to the specified threshold.
 
     Specifying a small threshold can potentially produce many matches. If you specify a threshold, you must also specify one or more keywords. Omit the parameter to return no matches.
@@ -762,12 +762,14 @@ The `smart_formatting` parameter directs the service to convert the following st
 -   Times
 -   Series of digits and numbers
 -   Phone numbers
--   Currency values
--   Internet email and web addresses
+-   Currency values (for US English and Spanish)
+-   Internet email and web addresses (for US English and Spanish, and only in some cases)
 
 You set the `smart_formatting` parameter to `true` to enable smart formatting. By default, the service does not perform smart formatting.
 
 The service applies smart formatting only to the final transcript of a recognition request. It applies smart formatting just before it returns the results to the client, when text normalization is complete. The conversion makes the transcript more readable and enables better post-processing of the transcription results.
+
+Hesitation markers and disfluencies can adversely impact the results of smart formatting. Fillers such as "uhm" and "uh" can disrupt the conversion of phrases and strings. For more information, see [Hesitation markers](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
 
 ### Punctuation (US English)
 {: #smartFormattingPunctuation}
@@ -841,30 +843,67 @@ Smart formatting is based on the presence of obvious keywords in the transcript.
 -   Phone numbers must be either `911` or a number with 10 or 11 digits that starts with the number `1`.
 -   In US English, dollar, cent, and euro values are replaced with their respective currency symbols.
 -   In Spanish, dolar, peso, peseta, libras esterlinas, libra, and euro values are replaced with their respective currency symbols.
+-   Internet email addresses are converted in some cases. Specifically, the service converts email addresses if the input audio uses the phrasing "email address . . . {address}". The following examples show correct conversions.
+
+    <table style="width:100%">
+      <caption>Table 3. Smart formatting of email addresses</caption>
+      <tr>
+        <th style="width:50%; text-align:left">Spoken audio</th>
+        <th style="text-align:left">Trascription</th>
+      </tr>
+      <tr>
+        <td>
+          My email address is j dot d o e at i b m dot com
+        </td>
+        <td>
+          My email address is j.doe@ibm.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mi correo electronico es j punto d o e arroba i b m punto com
+        </td>
+        <td>
+          Mi correo electronico es j.doe@ibm.com
+        </td>
+      </tr>
+    </table>
+
+-   Internet web addresses are converted in their short forms. Fully qualified web addresses are not converted. The following examples show complete and incomplete conversions.
+
+    <table style="width:100%">
+      <caption>Table 4. Smart formatting of web addresses</caption>
+      <tr>
+        <th style="width:50%; text-align:left">Spoken audio</th>
+        <th style="text-align:left">Trascription</th>
+      </tr>
+      <tr>
+        <td>
+          I saw the story on yahoo dot com
+        </td>
+        <td>
+          I saw the story on yahoo.com
+        </td>
+      </tr>
+      <tr>
+        <td>
+          I saw the story on w w w dot yahoo dot com
+        </td>
+        <td>
+          I saw the story on w w w .yahoo.com
+        </td>
+      </tr>
+    </table>
 
 #### Japanese
 {: #smartFormattingJapanese}
 
--   Internet email and web addresses are not converted.
 -   Phone numbers must be 10 or 11 digits and begin with valid prefixes for telephone numbers in Japan. For example, valid prefixes include `03` and `090`.
 -   English words are converted to ASCII (*hankaku*) characters. For example, <code>&#65321;&#65314;&#65325;</code> is converted to `IBM`.
 -   Ambiguous terms might not be converted if sufficient context is unavailable. For example, it is unclear whether <code>&#19968;&#26178;</code> and <code>&#21313;&#20998;</code> refer to times.
 -   Punctuation is handled in the same way with or without smart formatting. For example, based on probability calculations, one of <code>&#12459;&#12531;&#12510;</code> or `,` is selected.
 -   Yen values are not replaced with the yen currency symbol.
-
-### Smart formatting example
-{: #smartFormattingExample}
-
-The following example requests smart formatting with a recognition request by setting the `smart_formatting` parameter to `true`. The following sections show the effects of smart formatting on the results of a request.
-
-```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file.flac
-"{url}/v1/recognize?smart_formatting=true"
-```
-{: pre}
+-   Internet email and web addresses are not converted.
 
 ### Smart formatting results
 {: #smartFormattingResults}
@@ -872,7 +911,7 @@ curl -X POST
 The following table shows examples of final transcripts both with and without smart formatting. The transcripts are based on US English audio.
 
 <table summary="Each heading row is followed by multiple rows of examples that show the effect of smart formatting for the element that is identified in the heading.">
-  <caption>Table 3. Smart formatting example transcripts</caption>
+  <caption>Table 5. Smart formatting example transcripts</caption>
   <tr>
     <th id="without_formatting" style="width:45%; text-align:left">Without
       smart formatting</th>
@@ -1012,7 +1051,7 @@ The following table shows examples of final transcripts both with and without sm
       My email address is john dot doe at foo dot com
     </td>
     <td headers="internet_addresses with_formatting">
-      My email address is john.doe at foo.com
+      My email address is john.doe@foo.com
     </td>
   </tr>
   <tr>
@@ -1047,13 +1086,13 @@ The following table shows examples of final transcripts both with and without sm
   </tr>
 </table>
 
-### Example transcripts with long pauses
+### Smart formatting results for long pauses
 {: #smartFormattingLongPauses}
 
-In cases where an utterance contains long enough silences, the service can split the transcript into two or more final chunks. This affects the results of the formatting, as shown in the following examples.
+In cases where an utterance contains long enough pauses of silence, the service can split the transcript into two or more final results. This affects the contents of the response, as shown in the following examples.
 
 <table>
-  <caption>Table 4. Smart formatting example transcripts for long pauses</caption>
+  <caption>Table 6. Smart formatting example transcripts for long pauses</caption>
   <tr>
     <th style="width:45%; text-align:left">Audio speech</th>
     <th style="text-align:left">Formatted transcription results</th>
@@ -1078,6 +1117,22 @@ In cases where an utterance contains long enough silences, the service can split
     </td>
   </tr>
 </table>
+
+For more information about specifying a pause interval that affects the service's response, see [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time).
+
+### Smart formatting example
+{: #smartFormattingExample}
+
+The following example requests smart formatting with a recognition request by setting the `smart_formatting` parameter to `true`. The following sections show the effects of smart formatting on the results of a request.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/flac"
+--data-binary @{path}audio-file.flac
+"{url}/v1/recognize?smart_formatting=true"
+```
+{: pre}
 
 ## Numeric redaction
 {: #redaction}
@@ -1112,7 +1167,7 @@ Japanese redaction has the following differences:
 -   Similarly, redaction also masks date information in Japanese-style birth dates. In Japanese, date information is usually presented in Latin *Anno Domini* format but sometimes follows Japanese style, particularly for birth dates. In this case, the year and month are masked even though they contain just one or two digits. For example, numeric redaction changes the following string as shown.
 
     <table style="width:50%">
-      <caption>Table 5. Example redaction of Japanese-style birth date</caption>
+      <caption>Table 7. Example redaction of Japanese-style birth date</caption>
       <tr>
         <th style="text-align:left">Without redaction</th>
         <th style="text-align:left">With redaction</th>
@@ -1139,27 +1194,13 @@ Korean redaction has the following differences:
 
     If the <code>&#51060;</code> character were separated from the following character by a space, it would be replaced by an `X`, as described in [Numeric redaction results](#redactionResults).
 
-### Numeric redaction example
-{: #redactionExample}
-
-The following example requests numeric redaction with a recognition request by setting the `redaction` parameter to `true`. Because the request enables redaction, the service implicitly enables smart formatting with the request. The service effectively disables the other parameters of the request so that they have no effect: The service returns a single final transcript and recognizes no keywords. The following section shows the effects of redaction.
-
-```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/wav"
---data-binary @{path}audio-file.wav
-"{url}/v1/recognize?&redaction=true&max_alternatives=3&keywords=%22birth%22%2C%22birthday%22&keywords_threshold=0.5"
-```
-{: pre}
-
 ### Numeric redaction results
 {: #redactionResults}
 
 The following table shows examples of final transcripts both with and without numeric redaction in each supported language.
 
 <table style="width:90%" summary="Each heading row identifies a language and is followed by a single row that shows the same transcript both without and with numeric redaction enabled.">
-  <caption>Table 6. Numeric redaction example transcripts</caption>
+  <caption>Table 8. Numeric redaction example transcripts</caption>
   <tr>
     <th id="without_redaction" style="text-align:left">Without redaction</th>
     <th id="with_redaction" style="text-align:left">With redaction</th>
@@ -1204,6 +1245,20 @@ The following table shows examples of final transcripts both with and without nu
     </td>
   </tr>
 </table>
+
+### Numeric redaction example
+{: #redactionExample}
+
+The following example requests numeric redaction with a recognition request by setting the `redaction` parameter to `true`. Because the request enables redaction, the service implicitly enables smart formatting with the request. The service effectively disables the other parameters of the request so that they have no effect: The service returns a single final transcript and recognizes no keywords.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/wav"
+--data-binary @{path}audio-file.wav
+"{url}/v1/recognize?&redaction=true&max_alternatives=3&keywords=%22birth%22%2C%22birthday%22&keywords_threshold=0.5"
+```
+{: pre}
 
 ## Profanity filtering
 {: #profanity_filter}
@@ -1270,6 +1325,215 @@ curl -X POST
         }
       ],
       "final": true
+    }
+  ],
+  "result_index": 0
+}
+```
+{: codeblock}
+
+## End of phrase silence time
+{: #silence_time}
+
+The `end_of_phrase_silence_time` parameter specifies the duration of the pause interval at which the service splits a transcript into multiple final results. If the service detects pauses or extended silence before it reaches the end of the audio stream, its response can include multiple final results. Silence indicates a point at which the speaker pauses between spoken words or phrases. For most languages, the default pause interval is 0.8 seconds; for Chinese the default interval is 0.6 seconds. For more information, see [Pauses and silence](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#pauses-silence).
+
+By using the `end_of_phrase_silence_time` parameter, you can specify a double value between 0.0 and 120.0 seconds that indicates a different pause interval:
+
+-   A value greater than 0 specifies the interval that the service is to use for speech recognition.
+-   A value of 0 indicates that the service is to use the default interval. It is equivalent to omitting the parameter.
+
+You can use the parameter to strike a balance between how often a final result is produced and the accuracy of the transcription:
+
+-   A longer pause interval produces fewer final results, and each result covers a larger segment of audio. Larger segments tend to be more accurate because the service has more context with which to transcribe the audio.
+
+    However, larger pause intervals directly impact the latency of the final results. After the last word of the input audio, the service must wait for the indicated interval to expire before it returns its response. The service waits to ensure that the input audio does not continue beyond the longer interval. (With the WebSocket interface, setting the parameter can affect the latency and accuracy of the final results, regardless of whether you request interim results.)
+-   A shorter pause interval yields more final results, but because each segment of audio is smaller, transcription accuracy might not be as good. Smaller segments are acceptable when latency is crucial and transcription accuracy is not expected to degrade or any degradation is acceptable.
+
+    Also, a multi-phrase grammar recognizes, or matches, responses only within a single final result. If you use a grammar to recognize multiple strings, you can increase the pause interval to avoid receiving multiple final results.
+
+Increase the interval when accuracy is more important than latency. Decrease the interval when the speaker is expected to say short phrases or single-word responses.
+
+### End of phrase silence time example
+{: #silence_time_example}
+
+The following example requests show the effect of using the `end_of_phrase_silence_time` parameter. The audio speaks the phrase "one two three four five six," with a one-second pause between the words "three" and "four." The speaker might be reading a six-digit number from an identification card, for example, and pause to confirm the number.
+
+The first example uses the default pause interval of 0.8 seconds. Because the pause is greater than the default interval, the service splits the transcript at the pause. The `confidence` of both results is `0.99`, so transcription accuracy is very good despite the pause.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/wav"
+--data-binary @{path}audio-file.wav
+"{url}/v1/recognize"
+```
+{: pre}
+
+```javascript
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 0.99,
+          "transcript": "one two three "
+        }
+      ],
+      "final": true
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.99,
+          "transcript": "four five six "
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}
+```
+{: codeblock}
+
+But suppose speech recognition is performed with a grammar that expects the user to speak six digits in a single-phrase response. Because the service splits the transcript at the one-second pause, the results are empty. The grammar is applied to each final result, but neither result, "one two three" nor "four five six", contains six digits.
+
+The second example uses the same audio but sets the `end_of_phrase_silence_time` to 1.5 seconds. Because this value is greater than the length of the speaker's pause, the service returns a single final result that contains the entire spoken phrase. A grammar that expects to find six digits recognizes this transcript.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/wav"
+--data-binary @{path}audio-file.wav
+"{url}/v1/recognize?end_of_phrase_silence_time=1.5"
+```
+{: pre}
+
+```javascript
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 1.0,
+          "transcript": "one two three four five six "
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}
+```
+{: codeblock}
+
+## Split transcript at phrase end
+{: #split_transcript}
+
+The `split_transcript_at_phrase_end` parameter directs the service to split the transcript into multiple final results based on semantic features of the input. Setting the parameter to `true` causes the service to split the transcript at the conclusion of meaningful phrases such as sentences. The service bases its understanding of semantic features on the base language model that you use with the request along with a custom language model or grammar that you use. Custom language models and grammars can influence how and where the service splits a transcript.
+
+If you apply a custom language model to speech recognition, the service is likely to split the transcript based on the content and nature of the model's corpora. For example, a model whose corpora include many short sentences biases the service to mimic the corpora and split the input into multiple, shorter final results. Similarly, a grammar that expects a series of six digits can influence the service to insert splits to accommodate that series of digits.
+
+However, the degree to which custom language models and grammars influence the service's splitting of a transcript depends on many factors. Such factors include the amount of training data with which the custom model is built and the qualities of the audio itself. Small changes in the audio can affect the results.
+
+Regardless, the service can still produce multiple final results in response to pauses and silence. If you omit the `split_transcript_at_phrase_end` parameter or set it to `false`, the service splits transcripts based solely on the pause interval. The pause interval has precedence over splitting due to semantic features. For more information, see [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time).
+
+### Split transcript at phrase end results
+{: #split_transcript_results}
+
+When the split transcript at phrase end feature is enabled, each final result in the transcript includes an additional `end_of_utterance` field that identifies why the service split the transcript at that point:
+
+-   `full_stop` - A full semantic stop, such as for the conclusion of a grammatical sentence. The insertion of splits is influenced by the base language model and biased by custom language models and grammars, as described previously.
+-   `silence` - A pause or silence that is at least as long as the pause interval. You can use the `end_of_phrase_silence_time` parameter to control the length of the pause interval.
+-   `end_of_data` - The end of the input audio stream.
+-   `reset` - The amount of audio that is currently being processed exceeds the two-minute maximum. The service splits the transcript to avoid excessive memory use.
+
+### Split transcript at phrase end example
+{: #split_transcript_example}
+
+The following example requests demonstrate the use of the `split_transcript_at_phrase_end` parameter. The audio speaks the phrase "I have an identification card. The number is one two three four five six." The speaker pauses for one second between the words "three" and "four."
+
+The first example shows the results for a request that omits the parameter. The service returns two final results, splitting the transcript only at the speaker's extended pause.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/wav"
+--data-binary @{path}audio-file.wav
+"{url}/v1/recognize"
+```
+{: pre}
+
+```javascript
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 0.93,
+          "transcript": "I have a valid identification card the number is one two three "
+        }
+      ],
+      "final": true
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.99,
+          "transcript": "four five six "
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}
+```
+{: codeblock}
+
+The second example recognizes the same audio but sets `split_transcript_at_phrase_end` to `true`. The service returns three final results, adding a result for the semantic stop after the first sentence. Each result includes the `end_of_utterance` field to identify the reason for the split.
+
+```bash
+curl -X POST
+--header "Authorization: Bearer {token}"
+--header "Content-Type: audio/wav"
+--data-binary @{path}audio-file.wav
+"{url}/v1/recognize?spit_transcript_at_phrase_end=true"
+```
+{: pre}
+
+```javascript
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 0.92,
+          "transcript": "I have a valid identification card "
+        }
+      ],
+      "final": true,
+      "end_of_utterance": "full_stop"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.97,
+          "transcript": "the number is one two three "
+        }
+      ],
+      "final": true,
+      "end_of_utterance": "silence"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.99,
+          "transcript": "four five six "
+        }
+      ],
+      "final": true,
+      "end_of_utterance": "end_of_data"
     }
   ],
   "result_index": 0
