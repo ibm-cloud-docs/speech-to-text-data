@@ -2,12 +2,14 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-03-04"
 
 subcollection: speech-to-text-data
 
 ---
 
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:support: data-reuse='support'}
 {:shortdesc: .shortdesc}
 {:external: target="_blank" .external}
 {:tip: .tip}
@@ -480,6 +482,8 @@ How the service responds to a request to add or modify a custom word depends on 
 
 ## Validating a words resource
 {: #validateModel}
+{: troubleshoot}
+{: support}
 
 Especially when you add a corpus to a custom language model or add multiple custom words at once, examine the OOV words in the model's words resource.
 

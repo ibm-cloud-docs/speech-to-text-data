@@ -2,12 +2,14 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-04"
 
 subcollection: speech-to-text-data
 
 ---
 
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 {:shortdesc: .shortdesc}
 {:external: target="_blank" .external}
 {:tip: .tip}
@@ -45,6 +47,8 @@ For information about installing and configuring {{site.data.keyword.speechtotex
 
 ## Supported interfaces
 {: #interfaces}
+{: help}
+{: support}
 
 The {{site.data.keyword.speechtotextshort}} service offers multiple interfaces for speech recognition:
 
@@ -62,6 +66,8 @@ SDKs are available in many programming languages to simplify your use of the ser
 
 ## Input features
 {: #inputFeatures}
+{: help}
+{: support}
 
 The service's interfaces share many common input features for transcribing speech to text:
 
@@ -71,6 +77,8 @@ The service's interfaces share many common input features for transcribing speec
 
 ## Output features
 {: #outputFeatures}
+{: help}
+{: support}
 
 Most interfaces also support the following common output features:
 
@@ -91,6 +99,8 @@ Most interfaces also support the following common output features:
 
 ## Language support
 {: #languages}
+{: help}
+{: support}
 
 The service offers models for the following languages and dialects:
 

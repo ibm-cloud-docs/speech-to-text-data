@@ -2,12 +2,14 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-03-04"
 
 subcollection: speech-to-text-data
 
 ---
 
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:support: data-reuse='support'}
 {:shortdesc: .shortdesc}
 {:external: target="_blank" .external}
 {:tip: .tip}
@@ -103,6 +105,8 @@ You specify a customization weight by using the `customization_weight` parameter
 
 ## Troubleshooting the use of custom language models
 {: #languageTroubleshoot}
+{: troubleshoot}
+{: support}
 
 If you apply a custom language model to speech recognition but find that the service does not appear to be using words that the model contains, check for the following possible problems:
 

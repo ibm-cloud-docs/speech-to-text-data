@@ -2,12 +2,14 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-04"
 
 subcollection: speech-to-text-data
 
 ---
 
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 {:shortdesc: .shortdesc}
 {:external: target="_blank" .external}
 {:tip: .tip}
@@ -71,6 +73,8 @@ If you are recognizing large amounts of audio, you can manually divide the audio
 
 ## Using the WebSocket interface
 {: #basic-request-websocket}
+{: help}
+{: support}
 
 [The WebSocket interface](/docs/speech-to-text-data?topic=speech-to-text-data-websockets) offers an efficient implementation that provides low latency and high throughput over a full-duplex connection. All requests and responses are sent over the same WebSocket connection. Because of their advantages, WebSockets are the preferred mechanism for speech recognition. For more information, see [Advantages of the WebSocket interface](/docs/speech-to-text-data?topic=speech-to-text-data-developerOverview#advantages).
 
@@ -95,6 +99,8 @@ websocket.send(JSON.stringify({'action': 'stop'}));
 
 ## Using the synchronous HTTP interface
 {: #basic-request-http}
+{: help}
+{: support}
 
 [The synchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-http) provides the simplest way to make a recognition request. You use the `POST /v1/recognize` method to make a request to the service. You pass the audio and all parameters with the single request.
 
@@ -111,6 +117,8 @@ curl -X POST
 
 ## Using the asynchronous HTTP interface
 {: #basic-request-async}
+{: help}
+{: support}
 
 [The asynchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-async) provides a non-blocking interface for transcribing audio. You can use the interface with or without first registering a callback URL with the service. With a callback URL, the service sends callback notifications with job status and recognition results.
 

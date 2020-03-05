@@ -2,12 +2,14 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-03-04"
 
 subcollection: speech-to-text-data
 
 ---
 
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 {:shortdesc: .shortdesc}
 {:external: target="_blank" .external}
 {:tip: .tip}
@@ -88,6 +90,8 @@ For more information, see [Using custom acoustic and custom language models toge
 
 ## Language support for customization
 {: #languageSupport}
+{: help}
+{: support}
 
 Language and acoustic model customization are available only for some languages. The following table documents the level at which the service supports customization for each language.
 
