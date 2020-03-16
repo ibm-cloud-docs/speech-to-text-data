@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-16"
 
 subcollection: speech-to-text-data
 
@@ -127,7 +127,7 @@ Follow these guidelines to prepare a corpus text file:
 -   Beware of typographical errors. The service assumes that typographical errors are new words. Unless you correct them before you train the model, the service adds them to the model's vocabulary. Remember the adage *Garbage in, garbage out!*
 -   More sentences result in better accuracy. But the service does limit a model to a maximum of 10 million total words and 90 thousand OOV words from all sources combined.
 
-The service cannot generate a pronunciation for all words. After adding words from a corpus, you must validate the words resource to ensure that each word's definition is complete and valid. For more information, see [Validating a words resource](#validateModel).
+The service cannot generate a pronunciation for all words. After adding a corpus, you must validate the words resource to ensure that each OOV word's definition is complete and valid. For more information, see [Validating a words resource](#validateModel).
 
 ### What happens when I add a corpus file?
 {: #parseCorpus}
