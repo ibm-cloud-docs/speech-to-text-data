@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-31"
 
 subcollection: speech-to-text-data
 
@@ -117,47 +117,47 @@ You can use both broadband and narrowband models with any supported language for
   <tr>
     <td>Arabic (Modern Standard)</td>
     <td style="text-align:center">Not supported</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Brazilian Portuguese</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Chinese (Mandarin)</td>
     <td style="text-align:center">Not supported</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>English (United Kingdom)</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>English (United States)</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>French</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>German</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Japanese</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Korean</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Spanish (Argentinian)</td>
@@ -167,7 +167,7 @@ You can use both broadband and narrowband models with any supported language for
   <tr>
     <td>Spanish (Castilian)</td>
     <td style="text-align:center">GA</td>
-    <td style="text-align:center">Beta</td>
+    <td style="text-align:center">GA</td>
   </tr>
   <tr>
     <td>Spanish (Chilean)</td>

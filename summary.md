@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-03-31"
 
 subcollection: speech-to-text-data
 
@@ -89,7 +89,8 @@ An optional customization ID for a custom acoustic model that is adapted for the
       **Availability**
     </td>
     <td style="text-align:left">
-      Beta for all languages
+      Generally available for all language models that are generally available.
+      For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
     </td>
   </tr>
   <tr>
@@ -360,7 +361,8 @@ An optional string that identifies a grammar that is to be used for speech recog
       **Availability**
     </td>
     <td style="text-align:left">
-      Beta for US English, UK English, Brazilian Portuguese, French, German, Japanese, Korean, and Spanish
+      Beta for all language models that support language model customization.
+      For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
     </td>
   </tr>
   <tr>
@@ -585,7 +587,8 @@ An optional customization ID for a custom language model that includes terminolo
       **Availability**
     </td>
     <td style="text-align:left">
-      Generally available for US English, UK English, Brazilian Portuguese, French, German, Japanese, Korean, and Spanish
+      Generally available for all language models that are generally available.
+      For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
     </td>
   </tr>
   <tr>
