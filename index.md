@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-31"
 
 subcollection: speech-to-text-data
 
@@ -27,7 +27,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 28 February 2020. You can now specify the pause interval at which the service splits a transcript into multiple final results. You can also direct the service to split the transcript into multiple final results for semantic features such as sentences. For more information, see the [Version 1.1.3 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v113) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 28 February 2020. You can now specify the pause interval at which the service splits a transcript into multiple final results. You can also direct the service to split the transcript into multiple final results for semantic features such as sentences. **As of 1 April 2020,** acoustic model customization is now generally available (GA) for all supported languages. For more information, see the [Version 1.1.3 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v113) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech recognition capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -120,7 +120,7 @@ The service does not support all features for all languages. Moreover, it suppor
 -   The WebSocket and synchronous and asynchronous HTTP interfaces are generally available for all languages.
 -   The service offers both broadband models and narrowband models for all languages. For more information, see [Languages and models](/docs/speech-to-text-data?topic=speech-to-text-data-models).
 -   Some speech recognition features are available only for some languages and only with some interfaces. For more information, see the [Parameter summary](/docs/speech-to-text-data?topic=speech-to-text-data-summary).
--   The language model customization interface is generally available for all languages. The acoustic model customization interface is available as beta functionality for all languages. For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
+-   Both the language model customization and acoustic model customization interfaces are generally available for all language models that are generally available. For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
 
 ## FISMA support
 {: #fisma}
