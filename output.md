@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-04-23"
 
 subcollection: speech-to-text-data
 
@@ -1498,7 +1498,7 @@ curl -X POST
 --header "Authorization: Bearer {token}"
 --header "Content-Type: audio/wav"
 --data-binary @{path}audio-file.wav
-"{url}/v1/recognize?spit_transcript_at_phrase_end=true"
+"{url}/v1/recognize?split_transcript_at_phrase_end=true"
 ```
 {: pre}
 
