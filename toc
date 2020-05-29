@@ -91,6 +91,7 @@ Speech to Text for IBM Cloud Pak for Data
 
     {: .navgroup id="help"}
     release-notes.md
+    faq-usage.md
 
     {: .topicgroup}
     Developer community
