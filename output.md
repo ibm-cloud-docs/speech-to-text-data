@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-23"
+lastupdated: "2020-06-05"
 
 subcollection: speech-to-text-data
 
@@ -12,6 +12,7 @@ subcollection: speech-to-text-data
 {:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:important: .important}
 {:pre: .pre}
@@ -36,7 +37,7 @@ subcollection: speech-to-text-data
 {: #speaker_labels}
 
 The speaker labels feature is beta functionality that is available for US English, Japanese, and Spanish (both broadband and narrowband models) and UK English (narrowband model only).
-{: note}
+{: beta}
 
 Speaker labels identify which individuals spoke which words in a multi-participant exchange. (Labeling who spoke and when is sometimes referred to as *speaker diarization*.) You can use the information to develop a person-by-person transcript of an audio stream, such as contact to a call center. Or you can use it to animate an exchange with a conversational robot or avatar. For best performance, use audio that is at least a minute long.
 
@@ -754,7 +755,7 @@ severe thunderstorms swept through Colorado on Sunday "
 {: #smart_formatting}
 
 The smart formatting feature is beta functionality that is available for US English, Japanese, and Spanish.
-{: note}
+{: beta}
 
 The `smart_formatting` parameter directs the service to convert the following strings into more conventional representations:
 
@@ -1138,7 +1139,7 @@ curl -X POST
 {: #redaction}
 
 The numeric redaction feature is beta functionality that is available for US English, Japanese, and Korean.
-{: note}
+{: beta}
 
 The `redaction` parameter directs the service to redact, or mask, numeric data from final transcripts. The feature redacts any number that has three or more consecutive digits by replacing each digit with an `X` character. It is intended to redact sensitive numeric data, such as credit card numbers.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-05"
 
 subcollection: speech-to-text-data
 
@@ -12,6 +12,7 @@ subcollection: speech-to-text-data
 {:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:important: .important}
 {:pre: .pre}
@@ -34,8 +35,8 @@ subcollection: speech-to-text-data
 ## Custom models
 {: #custom-input}
 
-Language and acoustic model customization are available at different levels of support (generally available or beta). For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
-{: note}
+Language and acoustic model customization are available at different levels of support (generally available or beta) for different languages. For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
+{: beta}
 
 All interfaces accept a custom model for use in a recognition request:
 
@@ -82,6 +83,9 @@ For examples that use custom models with each of the service's interfaces, see
 
 ## Grammars
 {: #grammars-input}
+
+The grammars feature is beta functionality. The service supports grammars for all languages for which it supports language model customization.
+{: beta}
 
 You can add grammars to a custom language model and use them for speech recognition. Grammars use a formal language specification to define a set of production rules for transcribing strings. The rules specify how to form valid strings from the language's alphabet.
 
