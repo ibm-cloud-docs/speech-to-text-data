@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-06-05"
 
 subcollection: speech-to-text-data
 
@@ -15,6 +15,7 @@ subcollection: speech-to-text-data
 {:tip: .tip}
 {:important: .important}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -95,8 +96,8 @@ For more information, see [Using custom acoustic and custom language models toge
 
 Language and acoustic model customization are available only for some languages. The following table documents the level at which the service supports customization for each language.
 
--   *GA* indicates that the interface is generally available for production use.
--   *Beta* indicates that the interface is available as a beta offering.
+-   *GA* indicates that the interface is generally available for production use for that language.
+-   *Beta* indicates that the interface is available as a beta offering for that language.
 -   *Not supported* means that the interface is not available for that language.
 
 You can use both broadband and narrowband models with any supported language for which they are available. If a language supports language model customization, it also supports grammars. For a list of all available models, see [Supported language models](/docs/speech-to-text-data?topic=speech-to-text-data-models#modelsList).

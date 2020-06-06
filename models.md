@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-05"
 
 subcollection: speech-to-text-data
 
@@ -13,6 +13,7 @@ subcollection: speech-to-text-data
 {:tip: .tip}
 {:important: .important}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -39,9 +40,11 @@ For most languages, the service supports both broadband and narrowband models:
 Choosing the correct model for your application is important. Use the model that matches the sampling rate (and language) of your audio. The service automatically adjusts the sampling rate of your audio to match the model that you specify. For more information, see [Sampling rate](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats#samplingRate).
 
 To achieve the best recognition accuracy, you also need to consider the frequency content of your audio. For more information, see [Audio frequency](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats#frequency).
-{: tip}
 
-Table 1 lists the supported models for each language. If you omit the `model` parameter from a request, the service uses the US English broadband model, `en-US_BroadbandModel`, by default. Unless marked as *Beta*, all languages are generally available (*GA*) for production use.
+Table 1 lists the supported models for each language. If you omit the `model` parameter from a request, the service uses the US English broadband model, `en-US_BroadbandModel`, by default.
+
+Languages labeled *Beta* are currently beta functionality. Beta languages might not be ready for production use and are subject to change. They are initial offerings that are expected to improve in quality with time and usage. All other languages are generally available (*GA*) for production use.
+{: beta}
 
 <table>
   <caption>Table 1. Supported language models</caption>

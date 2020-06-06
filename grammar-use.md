@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-05"
 
 subcollection: speech-to-text-data
 
@@ -13,6 +13,7 @@ subcollection: speech-to-text-data
 {:tip: .tip}
 {:important: .important}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -32,6 +33,9 @@ Once you create and train your custom language model with your grammar, you can 
 -   Use the `grammar_name` parameter to specify the name of the grammar. You can specify only a single grammar with a request.
 
 When you use a grammar, the service recognizes only words from the specified grammar. The service does not use custom words that were added from corpora, that were added or modified individually, or that are recognized by other grammars.
+
+The grammars feature is beta functionality. You can use grammars with any language that supports language model customization. For more information, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
+{: beta}
 
 -   For the [WebSocket interface](/docs/speech-to-text-data?topic=speech-to-text-data-websockets), you first specify the customization ID with the `language_customization_id` parameter of the `/v1/recognize` method. You use this method to establish a WebSocket connection with the service.
 
