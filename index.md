@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-06-15"
 
 subcollection: speech-to-text-data
 
@@ -27,7 +27,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 28 February 2020. You can now specify the pause interval at which the service splits a transcript into multiple final results. You can also direct the service to split the transcript into multiple final results for semantic features such as sentences. **As of 1 April 2020,** acoustic model customization is now generally available (GA) for all supported languages. For more information, see the [Version 1.1.3 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v113) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 19 June 2020. The service now offers two speech recognition parameters for improved control of speech audio detection, and it now offers language models in Dutch and Italian. Also, speaker labels are now supported for German and Korean language models, and the Japanese narrowband model now includes multigram word units for digits and decimal fractions. And installation, configuration, and backup and restore are greatly improved. For more information, see the [Version 1.1.4 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v114) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech recognition capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -40,7 +40,7 @@ subcollection: speech-to-text-data
 
 The service is ideal for clients who need to extract high-quality speech transcripts from call center audio. Clients in industries such as financial services, healthcare, insurance, and telecommunication can develop cloud-native applications for customer care, customer voice, agent assistance, and other solutions.
 
-For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing the Watson Speech to Text add-on](/docs/speech-to-text-data?topic=speech-to-text-data-stt-installing).
+For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing Watson Speech to Text version 1.1.4](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install).
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/speech-to-text?topic=speech-to-text-about#about){: external}.
 {: note}
@@ -73,6 +73,7 @@ The service's interfaces share many common input features for transcribing speec
 
 -   [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats) - You can transcribe Ogg or Web Media (WebM) audio with the Opus or Vorbis codec, MP3 (or MPEG), Waveform Audio File Format (WAV), Free Lossless Audio Codec (FLAC), Linear 16-bit Pulse-Code Modulation (PCM), G.729, A-law, mu-law (or u-law), and basic audio. By using a format that supports compression, you can maximize the amount of audio data that you can send with a request.
 -   [Languages and models](/docs/speech-to-text-data?topic=speech-to-text-data-models) - You can transcribe audio by using broadband or narrowband models. Use broadband for audio that is sampled at a minimum rate of 16 kHz. Use narrowband for audio that is sampled at a minimum rate of 8 kHz.
+-   [Speech activity detection](/docs/speech-to-text?-datatopic=speech-to-text-data-input#detection) - For most languages, you can use two parameters to control which parts of the audio stream are used for speech recognition. The parameters can help ensure that only relevant audio is processed for speech recognition by suppressing background noise and non-speech events that can adversely affect the quality of speech recognition.
 -   [Audio transmission](/docs/speech-to-text-data?topic=speech-to-text-data-input#transmission) - You can pass audio as a continuous stream of data chunks or as a one-shot delivery that passes all of the data at one time. With streaming, the service enforces inactivity and session [timeouts](/docs/speech-to-text-data?topic=speech-to-text-data-input#timeouts).
 
 ## Output features
@@ -82,7 +83,7 @@ The service's interfaces share many common input features for transcribing speec
 
 Most interfaces also support the following common output features:
 
--   [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels) recognize different speakers from US English, Japanese, or Spanish audio. The transcription labels each speaker's contributions to a multi-participant conversation. (Beta functionality.)
+-   [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels) recognize different speakers from audio in US English, UK English, German, Japanese, Korean, and Spanish. The transcription labels each speaker's contributions to a multi-participant conversation. (Beta functionality.)
 -   [Keyword spotting](/docs/speech-to-text-data?topic=speech-to-text-data-output#keyword_spotting) identifies spoken phrases that match specified keyword strings with a user-defined level of confidence. Keyword spotting is especially useful when individual phrases from the audio are more important than the full transcription. For example, a customer support system might identify keywords to determine how to route user requests.
 -   [Interim results](/docs/speech-to-text-data?topic=speech-to-text-data-output#interim) return continually refined hypotheses as transcription progresses. The service returns final results when transcription is complete. Interim results are available only with the WebSocket interface.
 -   [Maximum alternatives](/docs/speech-to-text-data?topic=speech-to-text-data-output#max_alternatives) provide possible alternative transcripts. The service indicates final results in which it has the greatest confidence.
@@ -107,9 +108,11 @@ The service offers models for the following languages and dialects:
 -   Arabic (Modern Standard)
 -   Brazilian Portuguese
 -   Chinese (Mandarin)
+-   Dutch
 -   English (United Kingdom and United States)
 -   French
 -   German
+-   Italian
 -   Japanese
 -   Korean
 -   Spanish (Argentinian, Castilian, Chilean, Colombian, Mexican, and Peruvian)

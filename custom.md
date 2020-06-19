@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 subcollection: speech-to-text-data
 
@@ -131,6 +131,11 @@ You can use both broadband and narrowband models with any supported language for
     <td style="text-align:center">GA</td>
   </tr>
   <tr>
+    <td>Dutch</td>
+    <td style="text-align:center">GA</td>
+    <td style="text-align:center">GA</td>
+  </tr>
+  <tr>
     <td>English (United Kingdom)</td>
     <td style="text-align:center">GA</td>
     <td style="text-align:center">GA</td>
@@ -147,6 +152,11 @@ You can use both broadband and narrowband models with any supported language for
   </tr>
   <tr>
     <td>German</td>
+    <td style="text-align:center">GA</td>
+    <td style="text-align:center">GA</td>
+  </tr>
+  <tr>
+    <td>Italian</td>
     <td style="text-align:center">GA</td>
     <td style="text-align:center">GA</td>
   </tr>

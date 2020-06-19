@@ -22,11 +22,13 @@ Speech to Text for IBM Cloud Pak for Data
 
     {: .navgroup id="howto"}
     {: .topicgroup}
-    Installation
+    Installation and management
         speech-install.md
-        manage.md
-        speech-uninstall.md
-        [Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/speech-1.1.3-README.md)
+        speech-override.md
+        speech-datastores.md
+        speech-cluster.md
+        speech-scaling.md
+        speech-backup.md
 
     making-requests.md
 
@@ -74,7 +76,6 @@ Speech to Text for IBM Cloud Pak for Data
         grammar-examples.md
 
     custom-upgrade.md
-    backup.md
 
     {: topicgroup}
     Service background

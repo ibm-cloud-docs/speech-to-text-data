@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-04"
+lastupdated: "2020-06-07"
 
 subcollection: speech-to-text-data
 
@@ -13,6 +13,7 @@ subcollection: speech-to-text-data
 {:tip: .tip}
 {:important: .important}
 {:note: .note}
+{:beta: .beta}
 {:deprecated: .deprecated}
 {:pre: .pre}
 {:codeblock: .codeblock}
@@ -67,9 +68,12 @@ The WebSocket interface has a number of advantages over the HTTP interface:
 
 -   [Custom language models](/docs/speech-to-text-data?topic=speech-to-text-data-languageCreate) let you define domain-specific words for a base model. Custom language models expand the service's base vocabulary with terminology specific to domains such as medicine and law.
 -   [Custom acoustic models](/docs/speech-to-text-data?topic=speech-to-text-data-acoustic) let you adapt a base model for the acoustic characteristics of your environment and speakers. Custom acoustic models improve the service's ability to recognize speech for specific acoustic characteristics.
--   [Grammars](/docs/speech-to-text-data?topic=speech-to-text-data-grammars) let you restrict the phrases that the service can recognize to those defined in the grammar's rules. By limiting the search space for valid strings, the service can deliver results faster and more accurately. Grammars are supported with custom language models.
+-   [Grammars](/docs/speech-to-text-data?topic=speech-to-text-data-grammars) let you restrict the phrases that the service can recognize to those defined in the grammar's rules. By limiting the search space for valid strings, the service can deliver results faster and more accurately. Grammars are supported with custom language models. The service supports grammars for all languages for which it supports language model customization.
 
 You can use a custom language model, a custom acoustic model, or both for speech recognition with any of the service's interfaces.
+
+The grammars feature is beta functionality.
+{: beta}
 
 ## Obtaining metrics
 {: #overview-metrics}
