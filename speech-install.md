@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-06-19"
 
 subcollection: speech-to-text-data
 
@@ -43,7 +43,7 @@ See the following topics in the IBM Knowledge Center for the information that yo
 
 See the following topic if you need to remove an installation:
 
--   [Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-adm-cmd.html)
+-   [Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-uninstall.html)
 
 <!-- TEXT TO SPEECH LINKS
 [Preparing the cluster for {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/text-to-speech-adm-cmd.html)
