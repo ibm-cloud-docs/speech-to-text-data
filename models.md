@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 subcollection: speech-to-text-data
 
@@ -69,6 +69,11 @@ Languages labeled *Beta* are currently beta functionality. Beta languages might 
     <td style="text-align:center"><code>zh-CN_NarrowbandModel</code></td>
   </tr>
   <tr>
+    <td>Dutch</td>
+    <td style="text-align:center"><code>nl-NL_BroadbandModel</code></td>
+    <td style="text-align:center"><code>nl-NL_NarrowbandModel</code></td>
+  </tr>
+  <tr>
     <td>English (United Kingdon)</td>
     <td style="text-align:center"><code>en-GB_BroadbandModel</code></td>
     <td style="text-align:center"><code>en-GB_NarrowbandModel</code></td>
@@ -76,7 +81,7 @@ Languages labeled *Beta* are currently beta functionality. Beta languages might 
   <tr>
     <td>English (United States)</td>
     <td style="text-align:center"><code>en-US_BroadbandModel</code></td>
-    <td style="text-align:center"><code>en-US_NarrowbandModel</code></br>
+    <td style="text-align:center"><code>en-US_NarrowbandModel</code><br/><br/>
       <code>en-US_ShortForm_NarrowbandModel</code></td>
   </tr>
   <tr>
@@ -88,6 +93,11 @@ Languages labeled *Beta* are currently beta functionality. Beta languages might 
     <td>German</td>
     <td style="text-align:center"><code>de-DE_BroadbandModel</code></td>
     <td style="text-align:center"><code>de-DE_NarrowbandModel</code></td>
+  </tr>
+  <tr>
+    <td>Italian</td>
+    <td style="text-align:center"><code>it-IT_BroadbandModel</code></td>
+    <td style="text-align:center"><code>it-IT_NarrowbandModel</code></td>
   </tr>
   <tr>
     <td>Japanese</td>
@@ -134,12 +144,13 @@ Languages labeled *Beta* are currently beta functionality. Beta languages might 
 ### The US English short-form model
 {: #modelsShortForm}
 
-The US English short-form model, `en-US_ShortForm_NarrowbandModel`, can improve speech recognition for Interactive Voice Response (IVR) and Automated Customer Support solutions. The short-form model is trained to recognize the short utterances that are frequently expressed in customer support settings like automated and human support call centers. The model is tuned, for example, for precise utterances such as digits, single-character word and name spellings, and yes-no responses. Using a grammar in combination with the short-form model can further improve recognition results.
+The US English short-form model, `en-US_ShortForm_NarrowbandModel`, can improve speech recognition for Interactive Voice Response (IVR) and Automated Customer Support solutions. The short-form model is trained to recognize the short utterances that are frequently expressed in customer support settings like automated support call centers. In addition to being tuned for short utterances in general, the model is also tuned for precise utterances such as digits, single-character word and name spellings, and yes-no responses. Applying a custom language model with a grammar to the short-form model can further improve recognition results.
 
-As with all models, noisy environments can adversely impact the results. For example, background acoustic noise from airports, moving vehicles, conference rooms, and multiple speakers can reduce transcription accuracy.  Audio from speaker phones can also reduce accuracy due to the echo common to such devices. Using a custom acoustic model with the short-form model can counteract such effects.
+As with all models, noisy environments can adversely impact the results. For example, background acoustic noise from airports, moving vehicles, conference rooms, and multiple speakers can reduce transcription accuracy. Audio from speaker phones can also reduce accuracy due to the echo common to such devices. Using the parameters available for speech activity detection can counteract such effects and help improve speech transcription accuracy. Applying a custom acoustic model can further fine-tune the acoustics for speech recognition, but only as a final measure.
 
 -   For more information about language model and acoustic model customization, see [The customization interface](/docs/speech-to-text-data?topic=speech-to-text-data-customization).
 -   For more information about grammars, see [Using grammars with custom language models](/docs/speech-to-text-data?topic=speech-to-text-data-grammars).
+-   For more information about speech activity detection parameters, see [Speech activity detection](/docs/speech-to-text-data?topic=speech-to-text-data-input#detection).
 
 ### Language model example
 {: #modelsExample}

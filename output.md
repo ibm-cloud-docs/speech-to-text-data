@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-06-08"
 
 subcollection: speech-to-text-data
 
@@ -36,7 +36,7 @@ subcollection: speech-to-text-data
 ## Speaker labels
 {: #speaker_labels}
 
-The speaker labels feature is beta functionality that is available for US English, Japanese, and Spanish (both broadband and narrowband models) and UK English (narrowband model only).
+The speaker labels feature is beta functionality that is available for US English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only).
 {: beta}
 
 Speaker labels identify which individuals spoke which words in a multi-participant exchange. (Labeling who spoke and when is sometimes referred to as *speaker diarization*.) You can use the information to develop a person-by-person transcript of an audio stream, such as contact to a call center. Or you can use it to animate an exchange with a conversational robot or avatar. For best performance, use audio that is at least a minute long.
@@ -766,11 +766,13 @@ The `smart_formatting` parameter directs the service to convert the following st
 -   Currency values (for US English and Spanish)
 -   Internet email and web addresses (for US English and Spanish, and only in some cases)
 
-You set the `smart_formatting` parameter to `true` to enable smart formatting. By default, the service does not perform smart formatting.
+You set the `smart_formatting` parameter to `true` to enable smart formatting. By default, the service does not perform smart formatting. The service applies smart formatting just before it returns the final results to the client, when text normalization is complete. The conversion makes the transcript more readable and enables better post-processing of the transcription results.
 
-The service applies smart formatting only to the final transcript of a recognition request. It applies smart formatting just before it returns the results to the client, when text normalization is complete. The conversion makes the transcript more readable and enables better post-processing of the transcription results.
+You need to be aware of the following effects of smart formatting:
 
-Hesitation markers and disfluencies can adversely impact the results of smart formatting. Fillers such as "uhm" and "uh" can disrupt the conversion of phrases and strings. For more information, see [Hesitation markers](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
+-   Smart formatting affects only words in the `transcript` field of final results, those results for which the `final` field is `true`. It does not affect interim results, for which `final` is `false`.
+-   Smart formatting does not affect words in other fields of the response. For example, smart formatting is not applied to response data in the `timestamps` and `alternatives` fields.
+-   Hesitation markers and disfluencies, such as "uhm" and "uh", can adversely impact the conversion of phrases and strings by smart formatting. Therefore, smart formatting suppresses hesitation markers from the `transcript` field for final results. Hesitation markers continue to appear in interim results. For more information, see [Hesitation markers](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
 
 ### Punctuation (US English)
 {: #smartFormattingPunctuation}
@@ -905,6 +907,12 @@ Smart formatting is based on the presence of obvious keywords in the transcript.
 -   Punctuation is handled in the same way with or without smart formatting. For example, based on probability calculations, one of <code>&#12459;&#12531;&#12510;</code> or `,` is selected.
 -   Yen values are not replaced with the yen currency symbol.
 -   Internet email and web addresses are not converted.
+-   The Japanese narrowband model (`ja-JP_NarrowbandModel`) includes some multigram word units for digits and decimal fractions. The service returns these multigram units regardless of whether you enable smart formatting. The following examples show the units that the service returns. The numbers in parentheses show the equivalent Arabic numeric expression for each unit.
+
+    -   *Digits:* <code>&#12295;&#19968;</code> (01), ..., <code>&#12295;&#20061;</code> (09), <code>&#19968;&#12295;</code> (10), ..., <code>&#20061;&#12295;</code> (90)
+    -   *Decimal fractions:* <code>&#12295;&#12539;</code> (0.), <code>&#19968;&#12539;</code> (1.), ..., <code>&#21313;&#12539;</code> (10.)
+
+    The smart formatting feature understands and returns the multigram units that the model generates. If you apply your own post-processing to transcription results, you need to handle these units appropriately.
 
 ### Smart formatting results
 {: #smartFormattingResults}
