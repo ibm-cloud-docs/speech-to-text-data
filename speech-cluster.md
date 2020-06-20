@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-16"
+lastupdated: "2020-06-20"
 
 subcollection: speech-to-text-data
 
@@ -100,11 +100,11 @@ If you do not specify a security context, the OpenShift [`restricted`](https://i
 If your target namespace is bound to this SecurityContextConstraints resource, you can skip the rest of this section and proceed with installation. Otherwise, run the following command to bind the `restricted` SecurityContextConstraints to your namespace:
 
 ```bash
-oc adm policy add-scc-to-group restricted system:serviceaccounts:{namespace-name}
+oc adm policy add-scc-to-group restricted system:serviceaccounts:{namespace_name}
 ```
 {: pre}
 
-where `{namespace-name}` is the namespace into which IBM Cloud Pak for Data is installed, normally `zen`.
+where `{namespace_name}` is the namespace into which IBM Cloud Pak for Data is installed, normally `zen`.
 
 The standard definition of the `restricted` SecurityContextConstraints follows. Use this content to create a custom definition.
 
@@ -239,7 +239,7 @@ You might need to deploy a patch or fix to the services after initial installati
 
 where
 
-- `{cpd-tool}` can be `cpd-linux` if you are running from a Linux terminal, `cpd-darwin` for Mac OS, and so on.
+- `{cpd_tool}` can be `cpd-linux` if you are running from a Linux terminal, `cpd-darwin` for Mac OS, and so on.
 - `{namespace}` is the namespace into which {{site.data.keyword.icp4dfull_notm}} was installed, normally `zen`.
 - `{patch}` is the name of the patch or fix.
 -->
