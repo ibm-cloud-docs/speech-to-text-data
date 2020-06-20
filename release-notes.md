@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-06-20"
 
 subcollection: speech-to-text-data
 
@@ -88,7 +88,7 @@ The release includes the following functional changes and enhancements:
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.0.1 is now available. The service now works with {{site.data.keyword.icp4dfull_notm}} 2.1.0.1. The release includes the following changes:
 
--   The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift. For installation instructions, see [Installing Cloud Pak for Data on Red Hat OpenShift](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/openshift.html){: external} and [Installing the Watson Speech to Text add-on](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/watson/speech-to-text-install.html){: external}.
+-   The service now supports installing {{site.data.keyword.icp4dfull_notm}} with Red Hat OpenShift.
 -   The service now offers broadband and narrowband language models in six Spanish dialects:
 
     -   Argentinian Spanish (`es-AR_BroadbandModel` and `es-AR_NarrowbandModel`)

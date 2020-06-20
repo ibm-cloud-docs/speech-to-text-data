@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-20"
 
 subcollection: speech-to-text-data
 
@@ -37,20 +37,13 @@ The following pages often refer to the combination of {{site.data.keyword.speech
 
 See the following topics in the IBM Knowledge Center for the information that you need to get started with installation of the {{site.data.keyword.watson}} Speech services:
 
--   [Preparing the cluster for {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-adm-cmd.html)
--   [Override values for {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} installation](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-override.html)
--   [Installing {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-install.html)
+-   [Preparing the cluster for {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-adm-cmd.html){: external}
+-   [Override values for {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} installation](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-override.html){: external}
+-   [Installing {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-install.html){: external}
 
 See the following topic if you need to remove an installation:
 
--   [Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-uninstall.html)
-
-<!-- TEXT TO SPEECH LINKS
-[Preparing the cluster for {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/text-to-speech-adm-cmd.html)
-[Override values for {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}} installation](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/text-to-speech-override.html)
-[Installing {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/text-to-speech-install.html)
-[Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/text-to-speech-adm-cmd.html)
--->
+-   [Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/svc/watson/speech-to-text-uninstall.html){: external}
 
 ## Where to continue
 {: #speech-install-continue}
@@ -83,7 +76,7 @@ See the following pages for more information about installation and configuratio
       [Managing your datastores](/docs/speech-to-text-data?topic=speech-to-text-data-speech-datastores)
     </td>
     <td>
-      Administering the Minio and PostgreSQL datastores. For Minio, topics
+      Administering the MinIO and PostgreSQL datastores. For MinIO, topics
       include security secrets, operation mode, and storage. For PostgreSQL,
       the page describes setting access credentials.
     </td>
@@ -120,7 +113,7 @@ See the following pages for more information about installation and configuratio
     </td>
     <td>
       Backup and restore procedures for both disaster recovery and upgrade
-      of your data. The procedures cover the Minio and PostgreSQL datastores.
+      of your data. The procedures cover the MinIO and PostgreSQL datastores.
     </td>
   </tr>
 </table>
