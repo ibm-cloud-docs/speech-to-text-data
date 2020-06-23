@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -108,10 +108,10 @@ websocket.send(JSON.stringify({'action': 'stop'}));
 The following `curl` example shows a basic HTTP recognition request:
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @audio-file.flac \
 "{url}/v1/recognize"
 ```
 {: pre}
@@ -128,10 +128,10 @@ The interface uses HMAC-SHA1 signatures based on a user-specified secret to prov
 The following `curl` example shows a simple asynchronous HTTP recognition request. The request does not include a callback URL, so you must poll the service to get the job status and the resulting transcript.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @audio-file.flac \
 "{url}/v1/recognitions"
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -32,6 +32,9 @@ Once you create and train your custom language model, you can use it in speech r
 
 You can create multiple custom language models for the same or different domains. However, you can specify only one custom language model at a time with the `language_customization_id` parameter. For examples that use a grammar with a custom language model, see [Using a grammar for speech recognition](/docs/speech-to-text-data?topic=speech-to-text-data-grammarUse).
 
+## Examples of using a custom language model
+{: #languageUse-examples}
+
 -   For the [WebSocket interface](/docs/speech-to-text-data?topic=speech-to-text-data-websockets), use the `/v1/recognize` method. The specified custom model is used for all requests that are sent over the connection.
 
     ```javascript
@@ -47,10 +50,10 @@ You can create multiple custom language models for the same or different domains
 -   For the [synchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-http), use the `POST /v1/recognize` method. The specified custom model is used for that request.
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
-    --header "Content-Type: audio/flac"
-    --data-binary @audio-file.flac
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: audio/flac" \
+    --data-binary @audio-file.flac \
     "{url}/v1/recognize?language_customization_id={customization_id}"
     ```
     {: pre}
@@ -58,10 +61,10 @@ You can create multiple custom language models for the same or different domains
 -   For the [asynchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-async), use the `POST /v1/recognitions` method. The specified custom model is used for that request.
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
-    --header "Content-Type: audio/flac"
-    --data-binary @audio-file.flac
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: audio/flac" \
+    --data-binary @audio-file.flac \
     "{url}/v1/recognitions?language_customization_id={customization_id}"
     ```
     {: pre}
@@ -82,8 +85,8 @@ You specify a customization weight by using the `customization_weight` parameter
 -   For a training request, the following example specifies a customization weight of `0.5` with the `POST /v1/customizations/{customization_id}/train` method:
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
     "{url}/v1/customizations/{customization_id}/train?customization_weight=0.5"
     ```
     {: pre}
@@ -93,10 +96,10 @@ You specify a customization weight by using the `customization_weight` parameter
 -   For a recognition request, the following example specifies a customization weight of `0.7` with the `POST /v1/recognize` method:
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
-    --header "Content-Type: audio/flac"
-    --data-binary @audio-file1.flac
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: audio/flac" \
+    --data-binary @audio-file1.flac \
     "{url}/v1/recognize?language_customization_id={customization_id}&customization_weight=0.7"
     ```
     {: pre}

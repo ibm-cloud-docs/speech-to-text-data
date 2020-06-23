@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -32,6 +32,9 @@ You can also specify a custom language model to be used with the request, which 
 
 You can create multiple custom acoustic models for the same or different domains or environments. However, you can specify only one custom acoustic model at a time with the `acoustic_customization_id` parameter.
 
+## Examples of using a custom acoustic model
+{: #acousticUse-examples}
+
 -   For the [WebSocket interface](/docs/speech-to-text-data?topic=speech-to-text-data-websockets), use the `/v1/recognize` method. The specified custom model is used for all requests that are sent over the connection.
 
     ```javascript
@@ -47,10 +50,10 @@ You can create multiple custom acoustic models for the same or different domains
 -   For the [synchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-http), use the `POST /v1/recognize` method. The specified custom model is used for that request.
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
-    --header "Content-Type: audio/flac"
-    --data-binary @audio-file1.flac
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: audio/flac" \
+    --data-binary @audio-file1.flac \
     "{url}/v1/recognize?acoustic_customization_id={customization_id}"
     ```
     {: pre}
@@ -58,10 +61,10 @@ You can create multiple custom acoustic models for the same or different domains
 -   For the [asynchronous HTTP interface](/docs/speech-to-text-data?topic=speech-to-text-data-async), use the `POST /v1/recognitions` method. The specified custom model is used for that request.
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
-    --header "Content-Type: audio/flac"
-    --data-binary @audio-file.flac
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: audio/flac" \
+    --data-binary @audio-file.flac \
     "{url}/v1/recognitions?acoustic_customization_id={customization_id}"
     ```
     {: pre}

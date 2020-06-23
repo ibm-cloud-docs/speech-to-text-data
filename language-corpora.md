@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -50,8 +50,8 @@ Both methods return the `name` of the corpus, the `total_words` read from the co
 The following example lists all corpora for the custom model with the specified customization ID:
 
 ```bash
-curl -X GET
---header "Authorization: Bearer {token}"
+curl -X GET \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/customizations/{customization_id}/corpora"
 ```
 {: pre}
@@ -88,8 +88,8 @@ Three corpora were added to the custom model. The service successfully analyzed 
 The following example returns information about the corpus that is named `corpus1` for the custom model with the specified customization ID:
 
 ```bash
-curl -X GET
---header "Authorization: Bearer {token}"
+curl -X GET \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/customizations/{customization_id}/corpora/corpus1"
 ```
 {: pre}
@@ -120,8 +120,8 @@ Removing a corpus does not affect the custom model until you train the model on 
 The following example deletes the corpus that is named `corpus3` from the custom model with the specified customization ID.
 
 ```bash
-curl -X DELETE
---header "Authorization: Bearer {token}"
+curl -X DELETE \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/customizations/{customization_id}/corpora/corpus3"
 ```
 {: pre}

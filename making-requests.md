@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -68,8 +68,8 @@ Both HTTP interfaces accept requests over the HTTP Secure protocol, which in tur
 The examples in this documentation use the `curl` command to call the service's HTTP interfaces. For more information, see [Using the curl examples](/docs/speech-to-text-data?topic=speech-to-text-data-gettingStarted#getting-started-curl). The basic format of an HTTP request with `curl` includes the following components:
 
 ```bash
-curl -X {http_method}
---header "Authorization: Bearer {token}"
+curl -X {http_method} \
+--header "Authorization: Bearer {token}" \
 "https://{icp4d_cluster_host}{:port}/speech-to-text/{release}/instances/{instance_id}/api/v1/{method}"
 ```
 {: pre}
