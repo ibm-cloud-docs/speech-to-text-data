@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-17"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -64,11 +64,11 @@ Experimental and beta features are not intended for use with a production enviro
 To associate a customer ID with data, include the `X-Watson-Metadata` header with the request that passes the information. You pass the string `customer_id={id}` as the argument of the header. The following example associates the customer ID `my_customer_ID` with the data passed with a `POST /v1/recognize` request:
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "X-Watson-Metadata: customer_id=my_customer_ID"
---header "Content-Type: audio/wav"
---data-binary @audio.wav
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "X-Watson-Metadata: customer_id=my_customer_ID" \
+--header "Content-Type: audio/wav" \
+--data-binary @audio.wav \
 "{url}/v1/recognize"
 ```
 {: pre}
@@ -109,8 +109,8 @@ Use the `X-Watson-Metadata` header with the following methods:
 To delete all data that is associated with a customer ID, use the `DELETE /v1/user_data` method. You pass the string `customer_id={id}` as a query parameter with the request. The following example deletes all data for the customer ID `my_customer_ID`:
 
 ```bash
-curl -X DELETE
---header "Authorization: Bearer {token}"
+curl -X DELETE \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/user_data?customer_id=my_customer_ID"
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-08"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -158,10 +158,10 @@ As with all models, noisy environments can adversely impact the results. For exa
 The following example HTTP request uses the model `en-US-NarrowbandModel` for speech recognition:
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file.flac \
 "{url}/v1/recognize?model=en-US_NarrowbandModel"
 ```
 {: pre}
@@ -191,8 +191,8 @@ Both methods return the following information about a model:
 The following example lists all models that are supported by the service:
 
 ```bash
-curl -X GET
---header "Authorization: Bearer {token}"
+curl -X GET \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/models"
 ```
 {: pre}
@@ -242,8 +242,8 @@ curl -X GET
 The following example shows information about the US English broadband model. The model supports both language model customization and speakers labels.
 
 ```bash
-curl -X GET
---header "Authorization: Bearer {token}"
+curl -X GET \
+--header "Authorization: Bearer {token}" \
 "{url}/v1/models/en-US_BroadbandModel"
 ```
 {: pre}

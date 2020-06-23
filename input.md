@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-06"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -57,10 +57,10 @@ For an introduction to customization, see [The customization interface](/docs/sp
 The following example request includes the `language_customization_id` parameter to use the custom language model with the specified ID. It includes the `customization_weight` parameter to indicate that words from the custom model are to be given a relative weight of `0.5`.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file.flac \
 "{url}/v1/recognize?language_customization_id={customization_id}&customization_weight=0.5"
 ```
 {: pre}
@@ -68,10 +68,10 @@ curl -X POST
 The following example request uses both a custom language model and a custom acoustic model. The former is identified with the `language_customization_id` parameter, the latter with the `acoustic_customization_id` parameter.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file1.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file1.flac \
 "{url}/v1/recognize?language_customization_id={customization_id}&acoustic_customization_id={customization_id}"
 ```
 {: pre}
@@ -104,10 +104,10 @@ For more information, see [Using grammars with custom language models](/docs/spe
 The following example request includes the `language_customization_id` and `grammar_name` parameters to restrict the service's response to strings that are defined in the grammar named `list-abnf`.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file.flac \
 "{url}/v1/recognize?language_customization_id={customization_id}&grammar_name=list-abnf"
 ```
 {: pre}
@@ -183,10 +183,10 @@ The parameters are independent. You can use them individually or together.
 The following example request specifies a value of 0.6 for the `speech_detector_sensitivity` parameter with the synchronous HTTP interface. The service recognizes slightly more potential non-speech events than it would by default.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file1.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file1.flac \
 "{url}/v1/recognize?speech_detector_sensitivity=0.6"
 ```
 {: pre}
@@ -194,10 +194,10 @@ curl -X POST
 The following example request specifies a value of 0.5 for the `background_audio_suppression` parameter with the synchronous HTTP interface. The service suppresses a reasonable level of background audio.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file1.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file1.flac \
 "{url}/v1/recognize?background_audio_suppression=0.5"
 ```
 {: pre}
@@ -239,11 +239,11 @@ The service enforces timeouts on a streaming session. It can terminate a streami
 The following example request specifies `chunked` for the `Transfer-Encoding` header to use streaming mode. The connection remains open to accept additional chunks of audio.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---header "Transfer-Encoding: chunked"
---data-binary @{path}audio-file1.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--header "Transfer-Encoding: chunked" \
+--data-binary @{path}audio-file1.flac \
 "{url}/v1/recognize"
 ```
 {: pre}
@@ -268,11 +268,11 @@ The default inactivity timeout is 30 seconds. You can override this value by usi
 The following example request sets the inactivity timeout to 60 seconds. The request sends an initial file to begin the streaming session.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Transfer-Encoding: chunked"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file1.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Transfer-Encoding: chunked" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file1.flac \
 "{url}/v1/recognize?inactivity_timeout=60"
 ```
 {: pre}

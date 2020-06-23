@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-06-23"
 
 subcollection: speech-to-text-data
 
@@ -53,8 +53,8 @@ Follow these steps to upgrade a custom language model:
 1.  Upgrade the custom language model by using the `POST /v1/customizations/{customization_id}/upgrade_model` method:
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
     "{url}/v1/customizations/{customization_id}/upgrade_model"
     ```
     {: pre}
@@ -79,8 +79,8 @@ Follow these steps to upgrade a custom acoustic model. If the custom acoustic mo
 1.  Upgrade the custom acoustic model by using the `POST /v1/acoustic_customizations/{customization_id}/upgrade_model` method:
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
     "{url}/v1/acoustic_customizations/{customization_id}/upgrade_model"
     ```
     {: pre}
@@ -90,8 +90,8 @@ Follow these steps to upgrade a custom acoustic model. If the custom acoustic mo
 1.  *If the custom acoustic model was trained with a custom language model,* upgrade the custom acoustic model again, this time with the previously upgraded custom language model. Use the `custom_language_model_id` query parameter to specify the customization ID of the custom language model.
 
     ```bash
-    curl -X POST
-    --header "Authorization: Bearer {token}"
+    curl -X POST \
+    --header "Authorization: Bearer {token}" \
     "{url}/v1/acoustic_customizations/{customization_id}/upgrade_model?custom_language_model_id={custom_language_model_id}"
     ```
     {: pre}
@@ -156,10 +156,10 @@ By default, the service uses the latest version of a custom model that is specif
 For example, the following HTTP request specifies that the older version of the base model is to be used. Thus, the older version of the specified custom language model is also used.
 
 ```bash
-curl -X POST
---header "Authorization: Bearer {token}"
---header "Content-Type: audio/flac"
---data-binary @{path}audio-file.flac
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+--header "Content-Type: audio/flac" \
+--data-binary @{path}audio-file.flac \
 "{url}/v1/recognize?model=en-US_BroadbandModel&base_model_version=en-US_BroadbandModel.v07-06082016.06202016&language_customization_id={customization_id}"
 ```
 {: pre}
