@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-07-03"
 
 subcollection: speech-to-text-data
 
@@ -185,6 +185,9 @@ Both methods return the following information about a model:
     -   `custom_language_model` is a boolean that indicates whether you can create custom language models that are based on the model.
     -   `speaker_labels` indicates whether you can use the `speaker_labels` parameter with the model.
 
+The order in which the service returns models can change from call to call. Do not rely on an alphabetized or static list of models. Because the models are returned as an array of JSON objects, the order has no bearing on programmatic uses of the response.
+{: note}
+
 ### Example requests and responses
 {: #listExample}
 
@@ -206,7 +209,7 @@ curl -X GET \
       "url": "{url}/v1/models/pt-BR_NarrowbandModel",
       "rate": 8000,
       "supported_features": {
-        "custom_language_model": false,
+        "custom_language_model": true,
         "speaker_labels": false
       },
       "description": "Brazilian Portuguese narrowband model."
@@ -218,7 +221,7 @@ curl -X GET \
       "rate": 16000,
       "supported_features": {
         "custom_language_model": true,
-        "speaker_labels": false
+        "speaker_labels": true
       },
       "description": "Korean broadband model."
     },
@@ -229,7 +232,7 @@ curl -X GET \
       "rate": 16000,
       "supported_features": {
         "custom_language_model": true,
-        "speaker_labels": true
+        "speaker_labels": false
       },
       "description": "French broadband model."
     },
