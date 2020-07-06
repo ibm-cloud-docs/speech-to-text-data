@@ -45,7 +45,7 @@ If you need to request GDPR support for {{site.data.keyword.cloud}} {{site.data.
 
 Learn more about {{site.data.keyword.IBM_notm}}'s own GDPR readiness journey and our GDPR capabilities and offerings to support your compliance journey [here](http://www.ibm.com/gdpr){: external}.
 
-## Labeling and deleting data in the Speech to Text service
+## Labeling and deleting data in the {{site.data.keyword.speechtotextshort}} service
 {: #gdpr-speech-to-text}
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} enables you to delete all data that is associated with recognition requests, custom language models, and custom acoustic models. To delete data, you must do the following:

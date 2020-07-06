@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-20"
+lastupdated: "2020-07-06"
 
 subcollection: speech-to-text-data
 
@@ -23,7 +23,7 @@ subcollection: speech-to-text-data
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Installing {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} version 1.1.4
+# Installing {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.speechtotextshort}} version 1.1.4
 {: #speech-install}
 
 This and the following pages provide information about installing and managing {{site.data.keyword.speechtotextdatafull}} and {{site.data.keyword.texttospeechdatafull}} for {{site.data.keyword.icp4dfull}}. The two services share a common installation and common datastores to allow for more efficient resource consumption and simplified support. Most of the installation information therefore applies to both services.
