@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-06"
 
 keywords: speech to text,IBM cloud pak for data,getting started,tutorial,transcribe audio,speech recognition
 
@@ -36,7 +36,7 @@ subcollection: speech-to-text-data
 
 To use {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, you must first complete the following steps:
 
-1.  Provision an instance of {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. For more information about provisioning, see [Installing Watson Speech to Text version 1.1.4](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install).
+1.  Provision an instance of {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. For more information about provisioning, see [Installing {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.speechtotextshort}} version 1.1.4](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install).
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
 1.  Click the {{site.data.keyword.speechtotextshort}} instance to open the overview page. Copy the `{token}` and `{URL}` credential values.
 
