@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-30"
 
 subcollection: speech-to-text-data
 
@@ -38,7 +38,7 @@ The service is ideal for clients who need to extract high-quality speech transcr
 
 For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.speechtotextshort}} version 1.1.4](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install).
 
-{{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/speech-to-text?topic=speech-to-text-about#about){: external}.
+This documentation describes installed instances of {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}}. For more information about using a managed instance of {{site.data.keyword.speechtotextshort}} in {{site.data.keyword.cloud_notm}} or in {{site.data.keyword.icp4dfull_notm}} as a Service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/speech-to-text?topic=speech-to-text-about#about){: external}.
 {: note}
 
 ## Supported interfaces
