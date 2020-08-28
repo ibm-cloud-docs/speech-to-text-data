@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-28"
 
 subcollection: speech-to-text-data
 
@@ -90,7 +90,7 @@ Most interfaces also support the following common output features:
 -   [Numeric redaction](/docs/speech-to-text-data?topic=speech-to-text-data-output#redaction) redacts, or masks, numeric data from a final transcript. Redaction is intended to remove sensitive personal information, such as credit card numbers, from transcripts. The feature is supported for US English, Japanese, and Korean audio. (Beta functionality.)
 -   [Profanity filtering](/docs/speech-to-text-data?topic=speech-to-text-data-output#profanity_filter) censors profanity from US English transcripts and metadata.
 -   [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time) specifies the duration of the pause interval at which the service splits a transcript into multiple final results in response to silence.
--   [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript) directs the services to split a transcript into multiple final results for semantic features such as sentences. The service bases its understanding of semantic features on the base language model that you use with a request. Custom language models and grammars can also influence how and where the service splits a transcript.
+-   [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript) directs the services to split a transcript into multiple final results for semantic features such as sentences. The service bases its understanding of semantic features on the base language model that you use with a request. Custom language models and grammars can also influence how and where the service splits a transcript. The feature is supported for US English and UK English audio.
 -   [Processing metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#processing_metrics) provide detailed timing information about the service's analysis of the input audio.
 -   [Audio metrics](/docs/speech-to-text-data?topic=speech-to-text-data-metrics#audio_metrics) provide detailed information about the signal characteristics of the input audio.
 
