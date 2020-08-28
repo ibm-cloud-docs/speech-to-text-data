@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-06"
+lastupdated: "2020-08-28"
 
 subcollection: speech-to-text-data
 
@@ -1083,7 +1083,7 @@ An optional boolean that indicates whether the service splits a transcript into 
       **Availability**
     </td>
     <td style="text-align:left">
-      Generally available for all languages
+      Generally available for US English and UK English
     </td>
   </tr>
   <tr>
