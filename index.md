@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-02"
 
 subcollection: speech-to-text-data
 
@@ -69,7 +69,7 @@ The service's interfaces share many common input features for transcribing speec
 
 -   [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats) - You can transcribe Ogg or Web Media (WebM) audio with the Opus or Vorbis codec, MP3 (or MPEG), Waveform Audio File Format (WAV), Free Lossless Audio Codec (FLAC), Linear 16-bit Pulse-Code Modulation (PCM), G.729, A-law, mu-law (or u-law), and basic audio. By using a format that supports compression, you can maximize the amount of audio data that you can send with a request.
 -   [Languages and models](/docs/speech-to-text-data?topic=speech-to-text-data-models) - You can transcribe audio by using broadband or narrowband models. Use broadband for audio that is sampled at a minimum rate of 16 kHz. Use narrowband for audio that is sampled at a minimum rate of 8 kHz.
--   [Speech activity detection](/docs/speech-to-text?-datatopic=speech-to-text-data-input#detection) - For most languages, you can use two parameters to control which parts of the audio stream are used for speech recognition. The parameters can help ensure that only relevant audio is processed for speech recognition by suppressing background noise and non-speech events that can adversely affect the quality of speech recognition.
+-   [Speech activity detection](/docs/speech-to-text-data?topic=speech-to-text-data-input#detection) - For most languages, you can use two parameters to control which parts of the audio stream are used for speech recognition. The parameters can help ensure that only relevant audio is processed for speech recognition by suppressing background noise and non-speech events that can adversely affect the quality of speech recognition.
 -   [Audio transmission](/docs/speech-to-text-data?topic=speech-to-text-data-input#transmission) - You can pass audio as a continuous stream of data chunks or as a one-shot delivery that passes all of the data at one time. With streaming, the service enforces inactivity and session [timeouts](/docs/speech-to-text-data?topic=speech-to-text-data-input#timeouts).
 
 ## Output features
