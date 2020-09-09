@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-05"
+lastupdated: "2020-09-09"
 
 subcollection: speech-to-text-data
 
@@ -196,8 +196,8 @@ For example, suppose a new broadband model for the Czech language is made availa
 You might need to deploy a patch or fix to the services after initial installation. To deploy a patch, run the following command:
 
 ```bash
-./{cpd-tool} patch --namespace {namespace} --assembly watson-speech \
---patch-name {patch} --repo speech-repo.yaml
+   ./{cpd-tool} patch --namespace {namespace} --assembly watson-speech \
+   --patch-name {patch} --repo speech-repo.yaml
 ```
 {: pre}
 
