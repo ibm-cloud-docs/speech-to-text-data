@@ -22,7 +22,6 @@ subcollection: speech-to-text-data
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
-{:download: .download}
 
 # Managing your cluster
 {: #speech-cluster}

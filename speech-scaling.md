@@ -20,7 +20,6 @@ subcollection: speech-to-text-data
 {:java: .ph data-hd-programlang='java'}
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
-{:download: .download}
 {:gif: data-image-type='gif'}
 
 # Scaling up your installation
