@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-29"
+lastupdated: "2020-10-02"
 
 subcollection: speech-to-text-data
 
@@ -26,6 +26,8 @@ subcollection: speech-to-text-data
 
 # Usage FAQs
 {: #faq-usage}
+
+FAQs for {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} include questions about speech recognition, audio transmission, customization, and other topics.
 
 ## How much audio data can I submit to the service?
 {: #faq-usage-two}

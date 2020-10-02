@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-29"
 
 subcollection: speech-to-text-data
 
@@ -129,7 +129,7 @@ Federal Information Security Management Act (FISMA) support is available for {{s
 ## Try out the service
 {: #tryOut}
 
-For examples of the {{site.data.keyword.speechtotextshort}} service in action, see
+You can see examples of the {{site.data.keyword.speechtotextshort}} service in action:
 
 -   A [quick demo](https://speech-to-text-demo.ng.bluemix.net/){: external} that transcribes text from streaming audio input or from a file that you upload.
 -   Applications in the {{site.data.keyword.ibmwatson}} [Starter Kits](http://www.ibm.com/watson/developercloud/starter-kits.html){: external} that demonstrate the service.
