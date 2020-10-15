@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-10-15"
 
 subcollection: speech-to-text-data
 
@@ -25,7 +25,7 @@ subcollection: speech-to-text-data
 # Parameter summary
 {: #summary}
 
-A summary follows of all of the parameters available for speech recognition. For more information about all methods of the {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} service, see the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+A summary follows of all of the parameters available for speech recognition. For more information about all methods of the {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} service, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
 {: shortdesc}
 
 ## access_token

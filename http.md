@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-06"
+lastupdated: "2020-10-15"
 
 subcollection: speech-to-text-data
 
@@ -31,7 +31,7 @@ The synchronous HTTP interface of {{site.data.keyword.speechtotextdatafull}} for
 -   The first sends all of the audio in a single stream via the body of the request. You specify the parameters of the operation as request headers and query parameters. For more information, see [Making a basic HTTP request](#HTTP-basic).
 -   The second sends the audio as a multipart request. You specify the parameters of the request as a combination of request headers, query parameters, and JSON metadata. For more information, see [Making a multipart HTTP request](#HTTP-multi).
 
-Submit a maximum of 100 MB and a minimum of 100 bytes of audio data with a single request. For information about audio formats and about using compression to maximize the amount of audio that you can send with a request, see [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats). For information about all methods of the HTTP interface, see the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+Submit a maximum of 100 MB and a minimum of 100 bytes of audio data with a single request. For information about audio formats and about using compression to maximize the amount of audio that you can send with a request, see [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats). For information about all methods of the HTTP interface, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
 
 ## Making a basic HTTP request
 {: #HTTP-basic}

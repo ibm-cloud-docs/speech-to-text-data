@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-10-15"
 
 subcollection: speech-to-text-data
 
@@ -119,7 +119,7 @@ The initial release of the service. {{site.data.keyword.speechtotextshort}} for 
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} differs from the public {{site.data.keyword.speechtotextshort}} service in the following ways. You might find this information helpful if you are already familiar with the {{site.data.keyword.speechtotextshort}} service on the public {{site.data.keyword.cloud_notm}}.
 
--   {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} uses access tokens for authentication. For more information, see [Making requests to the service](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests) and the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
--   The endpoints for {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} are specific to your {{site.data.keyword.icp4dfull_notm}} cluster. For more information, see [Making requests to the service](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests) and the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+-   {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} uses access tokens for authentication. For more information, see [Making requests to the service](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests) and the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+-   The endpoints for {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} are specific to your {{site.data.keyword.icp4dfull_notm}} cluster. For more information, see [Making requests to the service](/docs/speech-to-text-data?topic=speech-to-text-data-making-requests) and the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
 -   {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} does not perform any request logging. You do not need to use the `X-Watson-Learning-Opt-Out` request header.
 -   {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} does not support Watson tokens. You cannot use the `X-Watson-Authorization-Token` request header to authenticate with the service.
