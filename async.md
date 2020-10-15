@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-23"
+lastupdated: "2020-10-15"
 
 subcollection: speech-to-text-data
 
@@ -33,7 +33,7 @@ The asynchronous HTTP interface of {{site.data.keyword.speechtotextdatafull}} fo
 
 The two approaches are not mutually exclusive. You can elect to receive callback notifications but still poll the service for the latest status or contact the service to retrieve results manually. The following sections describe how to use the asynchronous HTTP interface with either approach.
 
-Submit a maximum of 1 GB and a minimum of 100 bytes of audio data with a single request. For information about audio formats and about using compression to maximize the amount of audio that you can send with a request, see [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats). For more information about the individual methods of the interface, see the [API reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+Submit a maximum of 1 GB and a minimum of 100 bytes of audio data with a single request. For information about audio formats and about using compression to maximize the amount of audio that you can send with a request, see [Audio formats](/docs/speech-to-text-data?topic=speech-to-text-data-audio-formats). For more information about the individual methods of the interface, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
 
 ## Usage models
 {: #usage}
@@ -110,6 +110,18 @@ HTTPS is ideal for production applications. But during application development a
 {: #unregister}
 
 You can unregister an allowlisted callback URL at any time by calling the `POST /v1/unregister_callback` method. Unregistering a callback URL can be useful for testing your application with the service. Once you unregister a callback URL, you can no longer use it with asynchronous recognition requests.
+
+#### Example
+{: #unregisterExample-async}
+
+The following example unregisters a previously registered callback URL:
+
+```bash
+curl -X POST \
+--header "Authorization: Bearer {token}" \
+"{url}/v1/unregister_callback?callback_url=http://{user_callback_path}/results"
+```
+{: pre}
 
 ## Creating a job
 {: #create}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-15"
 
 subcollection: speech-to-text-data
 
@@ -39,7 +39,7 @@ The amount of audio that you can submit with a single speech recognition request
 -   The WebSocket and synchronous HTTP interfaces accept a maximum of 100 MB of audio data.
 -   The asynchronous HTTP interface accepts a maximum of 1 GB of audio data.
 
-For more information, see [Supported interfaces](/docs/speech-to-text-data?topic=speech-to-text-data-about#interfaces).
+For more information, see [Recognizing speech with the service](/docs/speech-to-text-data?topic=speech-to-text-data-service-features#features-recognition).
 
 ## How can I improve transcription accuracy?
 {: #faq-usage-three}
