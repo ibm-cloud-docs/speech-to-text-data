@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-22"
 
 subcollection: speech-to-text-data
 
@@ -60,7 +60,6 @@ The release includes the following functional changes and enhancements:
     -   [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport)
 -   The service now supports speaker labels (the `speaker_labels` parameter) for German and Korean language models. Speaker labels identify which individuals spoke which words in a multi-participant exchange. For more information, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels).
 -   The Japanese narrowband model (`ja-JP_NarrowbandModel`) now includes some multigram word units for digits and decimal fractions. The service returns these multigram units regardless of whether you enable smart formatting. The smart formatting feature understands and returns the multigram units that the model generates. If you apply your own post-processing to transcription results, you need to handle these units appropriately. For more information, see [Japanese](/docs/speech-to-text-data?topic=speech-to-text-data-output#smartFormattingJapanese) in the smart formatting documentation.
--   The backup and restore procedures are greatly simplified. They now back up data from the datastores, so you no longer need to re-create the operations you have run. For more information, see [Backing up and restoring your data](/docs/speech-to-text-data?topic=speech-to-text-data-speech-backup).
 
 ## Version 1.1.3 (28 February 2020)
 {: #v113}
