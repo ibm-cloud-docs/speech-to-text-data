@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-22"
 
 subcollection: speech-to-text-data
 
@@ -155,9 +155,9 @@ The service supports Cross-Origin Resource Sharing (CORS). By using CORS, web pa
 For instance, a web page that is loaded from a server in {{site.data.keyword.cloud}} can call the customization API directly, bypassing the {{site.data.keyword.cloud_notm}} server. For more information, see [enable-cors.org](https://enable-cors.org/){: external}.
 
 ## Using software development kits
-{: #sdks}
+{: #features-sdks}
 
 SDKs are available for the {{site.data.keyword.speechtotextshort}} service to simplify the development of speech applications. The SDKs support many popular programming languages and platforms.
 
--   For a complete list of SDKs and links to the SDKs on GitHub, see [Using SDKs](/docs/speech-to-text-data?topic=watson-using-sdks).
+-   For a complete list of SDKs and links to the SDKs on GitHub, see [{{site.data.keyword.watson}} SDKs](/docs/speech-to-text-data?topic=watson-using-sdks).
 -   For more information about all methods of the SDKs for the {{site.data.keyword.speechtotextshort}} service, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
