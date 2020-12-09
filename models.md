@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-06"
+lastupdated: "2020-10-27"
 
 subcollection: speech-to-text-data
 
@@ -52,9 +52,11 @@ Languages labeled *Beta* are currently beta functionality. Beta languages might 
 | Brazilian Portuguese | `pt-BR_BroadbandModel` | `pt-BR_NarrowbandModel` |
 | Chinese (Mandarin) | `zh-CN_BroadbandModel` | `zh-CN_NarrowbandModel` |
 | Dutch | `nl-NL_BroadbandModel` | `nl-NL_NarrowbandModel` |
+| English (Australian) | `en-AU_BroadbandModel` | `en-AU_NarrowbandModel` |
 | English (United Kingdom) | `en-GB_BroadbandModel` | `en-GB_NarrowbandModel` |
 | English (United States) | `en-US_BroadbandModel` | `en-US_NarrowbandModel`<br/><br/>`en-US_ShortForm_NarrowbandModel` |
 | French| `fr-FR_BroadbandModel` | `fr-FR_NarrowbandModel` |
+| French (Canadian) | `fr-CA_BroadbandModel` | `fr-CA_NarrowbandModel` |
 | German | `de-DE_BroadbandModel` | `de-DE_NarrowbandModel` |
 | Italian | `it-IT_BroadbandModel` | `it-IT_NarrowbandModel` |
 | Japanese | `ja-JP_BroadbandModel` | `ja-JP_NarrowbandModel` |
@@ -112,6 +114,9 @@ Both methods return the following information about a model:
 -   `supported_features` describes the additional service features that are supported with the model:
     -   `custom_language_model` is a boolean that indicates whether you can create custom language models that are based on the model.
     -   `speaker_labels` indicates whether you can use the `speaker_labels` parameter with the model.
+
+    The `speaker_labels` field returns `true` for all models. However, speaker labels are supported as beta functionality only for US English, Australian English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only). Speaker labels are not supported for any other models. Do not rely on the field to identify which models support speaker labels.
+    {: note}
 
 The order in which the service returns models can change from call to call. Do not rely on an alphabetized or static list of models. Because the models are returned as an array of JSON objects, the order has no bearing on programmatic uses of the response.
 {: note}

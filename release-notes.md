@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-22"
+lastupdated: "2020-12-04"
 
 subcollection: speech-to-text-data
 
@@ -25,13 +25,50 @@ subcollection: speech-to-text-data
 # Release notes
 {: #release-notes}
 
-The following versions of {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} are available. Information includes new features and changes for each version of the product and any known limitations.
+The following versions of {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} have been released. The information includes new features and changes for each version of the product and any known limitations.
 {: shortdesc}
 
 ## Known limitations
 {: #limitations}
 
-No known limitations at this time.
+The service has the following known limitation:
+
+-   The `GET /v1/models` and `GET /v1/models/{model_id}` methods list information about language models. Under `supported_features`, the `speaker_labels` field indicates whether you can use the `speaker_labels` parameter with a model. At this time, the field returns `true` for all models.
+
+    However, speaker labels are supported as beta functionality only for US English, Australian English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only). Speaker labels are not supported for any other models. Do not rely on the field to identify which models support speaker labels.
+
+    For more information about speaker labels and supported models, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels).
+
+## Version 1.2 (9 December 2020)
+{: #v12}
+
+{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.2 is now available. Installation and administration of the service include many changes. This version supports {{site.data.keyword.icp4dfull_notm}} versions 3.5 and 3.0.1, and Red Hat OpenShift versions 4.5 and 3.11. For more information about installing and managing the service, see [Installing {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} version 1.2](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install-12).
+
+The release includes the following functional changes and enhancements:
+
+-   The service now offers broadband and narrowband models for Australian English and Canadian French:
+    -   Australian English: `en-AU_BroadbandModel` and `en-AU_NarrowbandModel`
+    -   Canadian French: `fr-CA_BroadbandModel` and `fr-CA_NarrowbandModel`
+
+    The new models are generally available, and they support both language model and acoustic model customization.
+    -   For more information about supported languages and models, see [Languages and models](/docs/speech-to-text-data?topic=speech-to-text-data-models).
+    -   For more information about language support for customization, see [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport).
+-   The following language models have been updated for improved speech recognition:
+    -   Brazilian Portuguese: `pt-BR_BroadbandModel` and `pt-BR_NarrowbandModel`
+    -   French: `fr-FR_BroadbandModel`
+    -   German: `de-DE_BroadbandModel` and `de-DE_NarrowbandModel`
+    -   Japanese: `ja-JP_BroadbandModel`
+    -   UK English: `en-GB_BroadbandModel` and `en-GB_NarrowbandModel`
+    -   US English: `en-US_ShortForm_NarrowbandModel`
+
+    By default, the service automatically uses the updated models for all speech recognition requests. If you have custom language or custom acoustic models that are based on these models, you must upgrade your existing custom models to take advantage of the updates by using the following methods:
+    -   `POST /v1/customizations/{customization_id}/upgrade_model`
+    -   `POST /v1/acoustic_customizations/{customization_id}/upgrade_model`
+
+    For more information, see [Upgrading custom models](/docs/speech-to-text-data?topic=speech-to-text-data-customUpgrade).
+-   The speech recognition parameter `split_transcript_at_phrase_end` is now generally available for all languages. Previously, it was generally available only for US and UK English. For more information, see [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript).
+-   The hesitation marker that is used for the updated German broadband and narrowband models has changed from `[hesitation]` to `%HESITATION`. For more information about hesitation markers, see [Hesitation markers](/docs/speech-to-text-data?topic=speech-to-text-data-basic-response#hesitation).
+-   **Defect fix:** The service no longer has a latency issue for custom language models that contain a large number of grammars. When initially used for speech recognition, such custom models could take multiple seconds to load. The custom models now load much faster, greatly reducing latency when they are used for recognition.
 
 ## Version 1.1.4 (19 June 2020)
 {: #v114}

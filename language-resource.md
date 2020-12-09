@@ -137,7 +137,7 @@ When you add a corpus file, the service analyzes the file's contents. It extract
 #### Parsing of Brazilian Portuguese, Dutch, English, French, German, Italian, and Spanish
 {: #corpusLanguages}
 
-The following descriptions apply to Brazilian Portuguese, Dutch, English (US and UK), French, German, Italian, and Spanish (all dialects).
+The following descriptions apply to all dialects of Brazilian Portuguese, Dutch, English, French, German, Italian, and Spanish.
 
 -   Converts numbers to their equivalent words. Table 1 shows some examples.
 
@@ -336,9 +336,9 @@ You can provide as many as five alternative pronunciations for a word that is di
 Speech recognition uses statistical algorithms to analyze audio, so adding a word does not guarantee that the service transcodes it with complete accuracy. When you add a word, consider how it might be pronounced. Use the `sounds_like` field to provide various pronunciations that reflect how a word can be spoken. The following sections provide language-specific guidelines for specifying a sounds-like pronunciation.
 
 #### Guidelines for English
-{: #wordLanguages-enUS-enGB}
+{: #wordLanguages-english}
 
-*Guidelines for both US and UK English:*
+*Guidelines for Australian, United Kingdom, and United States English:*
 
 -   Use English alphabetic characters: `a-z` and `A-Z`.
 -   Use real or made-up words that are pronounceable in English for words that are difficult to pronounce, for example, `shuchesnie` for the word `Sczcesny`.
@@ -346,12 +346,12 @@ Speech recognition uses statistical algorithms to analyze audio, so adding a wor
 -   Substitute non-accented letters for accented letters, for example, `a` for <code>&agrave;</code> or `e` for <code>&egrave;</code>.
 -   You can include multiple words that are separated by spaces, but the service enforces a maximum of 40 total characters not including spaces.
 
-*Guidelines for US English only:*
+*Guidelines for Australian and United States English only:*
 
 -   To pronounce a single letter, use the letter followed by a period. If the period is followed by another character, be sure to use a space between the period and the next character. For example, use `N. C. A. A.`, *not* `N.C.A.A.`
 -   Use the spelling of numbers, for example, `seventy-five` for `75`.
 
-*Guidelines for UK English only:*
+*Guidelines for United Kingdom English only:*
 
 -   You **cannot** use periods or dashes in sounds-like pronunciations for UK English.
 -   To pronounce a single letter, use the letter followed by a space. For example, use `N C A A`, *not* `N. C. A. A.`, `N.C.A.A.`, or `NCAA`.
@@ -359,6 +359,8 @@ Speech recognition uses statistical algorithms to analyze audio, so adding a wor
 
 #### Guidelines for Brazilian Portuguese, Dutch, French, German, Italian, and Spanish
 {: #wordLanguages-esES-frFR}
+
+*Guidelines for all dialects of Brazilian Portuguese, Dutch, French, German, Italian, and Spanish:*
 
 -   You **cannot** use dashes in sounds-like pronunciations.
 -   Use alphabetic characters that are valid for the language: `a-z` and `A-Z` including valid accented letters.

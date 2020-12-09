@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-22"
+lastupdated: "2020-10-27"
 
 subcollection: speech-to-text-data
 
@@ -95,12 +95,12 @@ For most languages, you can use a pair of related parameters to control which pa
 You can direct the service to parse the audio in ways that determine how the service returns final transcription results:
 
 -   [End of phrase silence time](/docs/speech-to-text-data?topic=speech-to-text-data-output#silence_time) specifies the duration of the pause interval at which the service splits a transcript into multiple final results in response to silence.
--   [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript) directs the services to split a transcript into multiple final results for semantic features such as sentences. The service bases its understanding of semantic features on the base language model that you use with a request. Custom language models and grammars can also influence how and where the service splits a transcript. The feature is supported for US English and UK English audio.
+-   [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript) directs the services to split a transcript into multiple final results for semantic features such as sentences. The service bases its understanding of semantic features on the base language model that you use with a request. Custom language models and grammars can also influence how and where the service splits a transcript.
 
 ### Speaker labels
 {: #features-speaker-labels}
 
-[Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels) identify different speakers from the input audio. The transcription labels each speaker's contributions to a multi-participant conversation. Speakers labels are beta functionality that is available for US English, UK English, German, Japanese, Korean, and Spanish.
+[Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels) identify different speakers from the input audio. The transcription labels each speaker's contributions to a multi-participant conversation. Speakers labels are beta functionality that is available for US English, UK English, Australian English, German, Japanese, Korean, and Spanish.
 
 ### Keyword spotting and word alternatives
 {: #features-keyword-spotting}

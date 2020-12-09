@@ -24,17 +24,17 @@ subcollection: speech-to-text-data
 {:swift: .ph data-hd-programlang='swift'}
 
 # Managing your cluster
-{: #speech-cluster}
+{: #speech-cluster-12}
 
 After you install and configure the Speech services on {{site.data.keyword.icp4dfull}}, you can manage the service instance and the cluster. The following sections document some basic cluster and service management operations.
 {: shortdesc}
 
 ## Managing user access
-{: #speech-cluster-user-access}
+{: #speech-cluster-user-access-12}
 
 After you provision an instance, you can share the URL for the service with other users. However, those users can log in to the service only if you give them access.
 
-If you plan to use Security Assertion Markup Language (SAML) for single sign-on (SSO), complete the procedure in [Configuring single sign-on](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/install/saml-sso.html){: external} before you add users. If you add users before you configure SSO, you need to re-add the users with their SAML IDs to enable them to use SSO.
+If you plan to use Security Assertion Markup Language (SAML) for single sign-on (SSO), complete the procedure in [Configuring single sign-on](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/install/saml-sso.html){: external} before you add users. If you add users before you configure SSO, you need to re-add the users with their SAML IDs to enable them to use SSO.
 
 1.  From the web client menu, click **Administer > Manage user**.
 1.  Click **Add user**, then specify the user's full name, user name, and email address. Set the user's permissions, and then click **Add**.
@@ -47,7 +47,7 @@ If you plan to use Security Assertion Markup Language (SAML) for single sign-on 
 If you are not connected to an existing user registry and have not enabled single sign-on, then temporary passwords are created for the users that you add. The temporary passwords are sent to users by way of the email addresses you specify.
 
 ## Performing management tasks
-{: #speech-cluster-tasks}
+{: #speech-cluster-tasks-12}
 
 The following are some of the tasks you can perform to monitor and maintain a service instance:
 
@@ -87,7 +87,7 @@ The following are some of the tasks you can perform to monitor and maintain a se
     {: pre}
 
 ## Meeting SecurityContextConstraints requirements
-{: #speech-cluster-rhos-security-reqs}
+{: #speech-cluster-rhos-security-reqs-12}
 
 The Speech services installation has no Red Hat OpenShift SecurityContextConstraints requirements. Follow the generic SecurityContextConstraints requirements.
 {: note}
@@ -160,7 +160,7 @@ volumes:
 {: codeblock}
 
 ## Disabling storage of user data
-{: #speech-cluster-customer-data}
+{: #speech-cluster-customer-data-12}
 
 The {{site.data.keyword.speechtotextshort}} runtime and {{site.data.keyword.speechtotextshort}} customization AM patcher temporarily store payload data in the running container by default. The data includes audio files, recognition hypotheses, and annotations.
 
@@ -168,10 +168,10 @@ You can disable this behavior by checking the following option:
 
 `STT Runtime | Disable storage of customer data`
 
-Checking this option also removes sensitive information from container logs. For information about anonymizing data, see [Anonymizing logs and audio data](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override#speech-override-anonymize).
+Checking this option also removes sensitive information from container logs. For information about anonymizing data, see [Anonymizing logs and audio data](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12#speech-override-anonymize-12).
 
 ## Installing ad hoc models and voices
-{: #speech-cluster-model-install-adhoc}
+{: #speech-cluster-model-install-adhoc-12}
 
 It is possible to install ad hoc models and voices, which are models and voices that are not included with this version of the service. To do so, you need to download a special package that contains data for the models and voices. You then upload the package into the cluster as you did the main package and specify the following values in the `speech-override.yaml` file during installation.
 
@@ -185,12 +185,12 @@ It is possible to install ad hoc models and voices, which are models and voices 
 
 For example, suppose a new broadband model for the Czech language is made available after the current release. To enable it as a service update, specify the following values during installation: `$modelName` is `csCSBroadbandModel`, and `$catalogName` is `cs-CS_BroadbandModel`. For more information, see
 
--   [Installing {{site.data.keyword.speechtotextshort}} models](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override#speech-override-stt-models)
--   [Installing {{site.data.keyword.texttospeechshort}} voices](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override#speech-override-tts-voices)
+-   [Installing {{site.data.keyword.speechtotextshort}} models](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12#speech-override-stt-models-12)
+-   [Installing {{site.data.keyword.texttospeechshort}} voices](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12#speech-override-tts-voices-12)
 
 <!-- COMMENT OUT FOR INITIAL 1.1.4 RELEASE.
 ## Deploying a patch
-{: #speech-cluster-patch}
+{: #speech-cluster-patch-12}
 
 You might need to deploy a patch or fix to the services after initial installation. To deploy a patch, run the following command:
 
