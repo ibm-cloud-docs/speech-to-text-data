@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2018, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-12-04"
 
 subcollection: speech-to-text-data
 
@@ -27,7 +27,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} was updated on 19 June 2020. The service now offers two speech recognition parameters for improved control of speech audio detection, and it now offers language models in Dutch and Italian. Also, speaker labels are now supported for German and Korean language models, and the Japanese narrowband model now includes multigram word units for digits and decimal fractions. And installation, configuration, and backup and restore are greatly improved. For more information, see the [Version 1.1.4 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v114) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} released version 1.2 on 9 December 2020. The release includes a number of updates. For more information about all changes in this release, see the [Version 1.2 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v12) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech transcription capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
@@ -36,7 +36,7 @@ The service provides APIs that make it suitable for any application where speech
 
 The service is ideal for clients who need to extract high-quality speech transcripts from call center audio. Clients in industries such as financial services, healthcare, insurance, and telecommunication can develop cloud-native applications for customer care, customer voice, agent assistance, and other solutions.
 
-For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.speechtotextshort}} version 1.1.4](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install).
+For information about installing and configuring {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}, see [Installing {{site.data.keyword.ibmwatson_notm}} {{site.data.keyword.speechtotextshort}} version 1.2](/docs/speech-to-text-data?topic=speech-to-text-data-speech-install-12).
 
 This documentation describes installed instances of {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}}. For more information about using a managed instance of {{site.data.keyword.speechtotextshort}} in {{site.data.keyword.cloud_notm}} or in {{site.data.keyword.icp4dfull_notm}} as a Service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/speech-to-text?topic=speech-to-text-about#about){: external}.
 {: note}
@@ -67,8 +67,8 @@ The service supports many languages and dialects:
 -   Brazilian Portuguese
 -   Chinese (Mandarin)
 -   Dutch
--   English (United Kingdom, and United States)
--   French
+-   English (Australian, United Kingdom, and United States)
+-   French (French and Canadian)
 -   German
 -   Italian
 -   Japanese

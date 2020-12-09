@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-27"
 
 subcollection: speech-to-text-data
 
@@ -308,7 +308,7 @@ An optional boolean that indicates whether the service identifies which individu
 
 | Availability and usage | Description |
 |------------------------|-------------|
-| Availability           | Beta for US English, German, Japanese, Korean, and Spanish (broadband and narrowband models) and UK English (narrowband model only) |
+| Availability           | Beta for US English, Australian English, German, Japanese, Korean, and Spanish (broadband and narrowband models) and UK English (narrowband model only) |
 | WebSocket              | Parameter of JSON `start` message |
 | Synchronous HTTP       | Query parameter of `POST /v1/recognize` method |
 | Asynchronous HTTP      | Query parameter of `POST /v1/recognitions` method |
@@ -334,7 +334,7 @@ An optional boolean that indicates whether the service splits a transcript into 
 
 | Availability and usage | Description |
 |------------------------|-------------|
-| Availability           | Generally available for US English and UK English |
+| Availability           | Generally available for all languages |
 | WebSocket              | Parameter of JSON `start` message |
 | Synchronous HTTP       | Query parameter of `POST /v1/recognize` method |
 | Asynchronous HTTP      | Query parameter of `POST /v1/recognitions` method |

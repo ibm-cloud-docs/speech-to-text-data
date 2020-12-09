@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-06"
+lastupdated: "2020-10-27"
 
 subcollection: speech-to-text-data
 
@@ -108,9 +108,11 @@ You can use both broadband and narrowband models with any supported language for
 | Brazilian Portuguese | GA | GA |
 | Chinese (Mandarin) | Not supported | GA |
 | Dutch | GA | GA |
+| English (Australian) | GA | GA |
 | English (United Kingdom) | GA | GA |
 | English (United States) | GA | GA |
 | French | GA | GA |
+| French (Canadian) | GA | GA |
 | German | GA | GA |
 | Italian | GA | GA |
 | Japanese | GA | GA |

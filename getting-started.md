@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-23"
 
 keywords: speech to text data,IBM cloud pak for data,getting started,tutorial,transcribe audio,speech recognition
 
@@ -168,6 +168,6 @@ of severe thunderstorms swept through Colorado and Sunday "
 ## Next steps
 
 
--   To try an example application that transcribes text from streaming audio input or from a file that you upload, see the [{{site.data.keyword.speechtotextshort}} demo](https://speech-to-text-demo.ng.bluemix.net/){: external}.
+-   To try an example application that transcribes text from streaming audio input or from a file that you upload, see the [{{site.data.keyword.speechtotextshort}} demo (all languages)](https://speech-to-text-demo.ng.bluemix.net/){: external} or the [{{site.data.keyword.speechtotextshort}} demo (US English)](https://www.ibm.com/demos/live/speech-to-text/self-service/home){: external}.
 -   For more information about the service's interfaces and features, see [Service features](/docs/speech-to-text-data?topic=speech-to-text-data-service-features).
 -   For more information about all methods of the service's interfaces, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.

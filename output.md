@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-27"
 
 subcollection: speech-to-text-data
 
@@ -36,7 +36,7 @@ subcollection: speech-to-text-data
 ## Speaker labels
 {: #speaker_labels}
 
-The speaker labels feature is beta functionality that is available for US English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only).
+The speaker labels feature is beta functionality that is available for US English, Australian English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only).
 {: beta}
 
 Speaker labels identify which individuals spoke which words in a multi-participant exchange. (Labeling who spoke and when is sometimes referred to as *speaker diarization*.) You can use the feature to create a person-by-person transcript of an audio stream. For example, you can use it to develop analytics for a call-center or meeting transcript, or to animate an exchange with a conversational robot or avatar. For best performance, use audio that is at least a minute long.
@@ -1188,9 +1188,6 @@ curl -X POST \
 
 ## Split transcript at phrase end
 {: #split_transcript}
-
-The split transcript at phrase end feature is generally available for US English and UK English only.
-{: note}
 
 The `split_transcript_at_phrase_end` parameter directs the service to split the transcript into multiple final results based on semantic features of the input. Setting the parameter to `true` causes the service to split the transcript at the conclusion of meaningful phrases such as sentences. The service bases its understanding of semantic features on the base language model that you use with the request along with a custom language model or grammar that you use. Custom language models and grammars can influence how and where the service splits a transcript.
 
