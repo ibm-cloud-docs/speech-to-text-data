@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-12-16"
 
 subcollection: speech-to-text-data
 
@@ -26,7 +26,7 @@ subcollection: speech-to-text-data
 # Service features
 {: #service-features}
 
-{{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} offers many advanced features to help you get the most from your audio transcription. The service offers multiple speech recognition interfaces, and these interfaces support many features that you can use to manage how you pass your audio to the service and the results that the service returns. You can also customize the service to enhance its vocabulary and to accommodate the acoustic characteristics of your audio. And as with all {{site.data.keyword.ibmwatson}} services, SDKs are available to simplify application development in many programming languages.
+{{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} offers many advanced features to help you get the most from your audio transcription. The service offers multiple speech recognition interfaces, and these interfaces support many features that you can use to manage how you pass your audio to the service and the results that the service returns. You can also customize the service to enhance its vocabulary and to accommodate the acoustic characteristics of your audio.  And as with all {{site.data.keyword.ibmwatson}} services, SDKs are available to simplify application development in many programming languages.
 {: shortdesc}
 
 ## Recognizing speech with the service
@@ -146,6 +146,18 @@ The service offers two types of optional metrics for speech recognition requests
 -   [Grammars](/docs/speech-to-text-data?topic=speech-to-text-data-grammars) let you restrict the phrases that the service can recognize to those defined in a grammar's rules. By limiting the search space for valid strings, the service can deliver results faster and more accurately. Grammars are created for and used with custom language models. The service supports grammars for all languages for which it supports language model customization. (The grammars feature is beta functionality.)
 
 You can use a custom language model, a custom acoustic model, or both for speech recognition with any of the service's interfaces. For detailed descriptions of all customization methods, along with examples, see the [API & SDK reference](https://{DomainName}/apidocs/speech-to-text-data){: external}.
+
+## Understanding data security
+{: #features-data-security}
+
+The {{site.data.keyword.speechtotextshort}} service provides security for all user data both in motion and at rest:
+
+-   Transport Layer Security (TLS) 1.2 is used to secure data in transit.
+-   Advanced Encryption Standard (AES)-256 with Secure Hash Algorithm (SHA)-256 is used to secure data at rest.
+
+For more information about data security for cloud applications, see [Security architecture for cloud applications](https://www.ibm.com/cloud/architecture/architectures/securityArchitecture/security-for-data){: external}.
+
+The service also supports the European Union General Data Protection Regulation (GDPR) to mange user data. For more information, see [Information security](/docs/speech-to-text-data?topic=speech-to-text-data-information-security).
 
 ## Leveraging CORS support
 {: #features-cors}
