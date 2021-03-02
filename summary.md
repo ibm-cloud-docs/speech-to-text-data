@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-10-27"
+  years: 2018, 2021
+lastupdated: "2021-03-02"
 
 subcollection: speech-to-text-data
 
@@ -269,7 +269,7 @@ An optional boolean that indicates whether the service censors profanity from a 
 
 | Availability and usage | Description |
 |------------------------|-------------|
-| Availability           | Generally available for US English |
+| Availability           | Generally available for US English and Japanese |
 | WebSocket              | Parameter of JSON `start` message |
 | Synchronous HTTP       | Query parameter of `POST /v1/recognize` method |
 | Asynchronous HTTP      | Query parameter of `POST /v1/recognitions` method |
