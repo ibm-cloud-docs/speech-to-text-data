@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-04"
+  years: 2018, 2021
+lastupdated: "2021-03-24"
 
 subcollection: speech-to-text-data
 
@@ -38,6 +38,52 @@ The service has the following known limitation:
     However, speaker labels are supported as beta functionality only for US English, Australian English, German, Japanese, Korean, and Spanish (both broadband and narrowband models) and UK English (narrowband model only). Speaker labels are not supported for any other models. Do not rely on the field to identify which models support speaker labels.
 
     For more information about speaker labels and supported models, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels).
+
+## Version 1.2.1 (26 March 2021)
+{: #v121}
+
+{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.2.1 is now available. Versions 1.2 and 1.2.1 use the same version 1.2 documentation and installation instructions. Version 1.2.1 includes the following changes:
+
+-   Version 1.2.1 supports installation on Red Hat OpenShift version 4.6 in addition to versions 4.5 and 3.11.
+-   For both clusters connected to the internet and air-gapped clusters, the installation instructions include the following steps:
+    -   Use the `oc label` command to set up required labels for the namespace where {{site.data.keyword.icp4dfull_notm}} is installed.
+    -   Use the `oc project` command to ensure that you are pointing at the correct OpenShift project.
+    -   Use the `cpd-cli install` command to install an EnterpriseDB PostgreSQL server that is used by the Speech services.
+
+    You perform these steps before you install the Speech services. For more information, see [Installing the {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} service](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.5.0/svc-speech/stt-svc-install.html){: external}.
+-   The Minio and PostgreSQL datastores require the following hard-coded values for their secrets:
+    -   For *Minio*, use `minio`.
+    -   For *PostgreSQL*, use `user-provided-postgressql`.
+
+    You cannot use your own values for these secrets. The secrets must be created before you install the Speech services.
+-   The following entries have been removed from the `speech-override.yaml` file. They were added to work around a problem that has now been fixed.
+
+    ```yaml
+    sttRuntime:
+      images:
+        miniomc:
+          tag:
+            1.0.5
+    sttAMPatcher:
+      images:
+        miniomc:
+          tag:
+            1.0.5
+    ttsRuntime:
+      images:
+        miniomc:
+          tag:
+            1.0.5
+    ```
+    {: codeblock}
+
+-   The abbreviated `speech-override.yaml` file has generally been reduced further by fine-tuning its contents to the essential elements. The updated version of the file appears in the following sections:
+    -   [Creating an override file for {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}} installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.5.0/svc-speech/stt-svc-override.html){: external}
+    -   [Using the override file](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12)
+
+    You can download a complete version of the [speech-override.yaml](https://watson-developer-cloud.github.io/doc-tutorial-downloads/speech-to-text/cpd-version-12/speech-override.yaml){: external} file. The complete version includes all of the detailed elements described in [Using the override file](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12).
+-   The entitled registry from which the service pulls images for the PostgreSQL datastore has changed. The registry location changed from `cp.icr.io/cp/watson-speech` to `cp.icr.io/cp/cpd`. This change is transparent to users.
+-   A step was added to the procedure for uninstalling the Speech services to clean up all of the resources from the installation. For more information, see [Uninstalling {{site.data.keyword.watson}} {{site.data.keyword.speechtotextshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.5.0/svc-speech/stt-svc-uninstall.html){: external}.
 
 ## Version 1.2 (9 December 2020)
 {: #v12}
@@ -98,7 +144,15 @@ The release includes the following functional changes and enhancements:
 -   The service now supports speaker labels (the `speaker_labels` parameter) for German and Korean language models. Speaker labels identify which individuals spoke which words in a multi-participant exchange. For more information, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels).
 -   The Japanese narrowband model (`ja-JP_NarrowbandModel`) now includes some multigram word units for digits and decimal fractions. The service returns these multigram units regardless of whether you enable smart formatting. The smart formatting feature understands and returns the multigram units that the model generates. If you apply your own post-processing to transcription results, you need to handle these units appropriately. For more information, see [Japanese](/docs/speech-to-text-data?topic=speech-to-text-data-output#smartFormattingJapanese) in the smart formatting documentation.
 
-## Version 1.1.3 (28 February 2020)
+## Older versions
+{: #older}
+
+-   [Version 1.1.3 (28 February 2020)](#v113)
+-   [Version 1.1.2 (27 November 2019)](#v112)
+-   [Version 1.0.1 (30 August 2019)](#v101)
+-   [Version 1.0.0 (28 June 2019)](#v100)
+
+### Version 1.1.3 (28 February 2020)
 {: #v113}
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.1.3 is now available. The release includes the following changes:
@@ -116,14 +170,14 @@ The release includes the following functional changes and enhancements:
     For more information, see [Split transcript at phrase end](/docs/speech-to-text-data?topic=speech-to-text-data-output#split_transcript).
 -   Speaker labels are updated to improve the identification of individual speakers for further analysis of your audio sample. For more information about the speaker labels feature, see [Speaker labels](/docs/speech-to-text-data?topic=speech-to-text-data-output#speaker_labels). For more information about the improvements to the feature, see [IBM Research AI Advances Speaker Diarization in Real Use Cases](https://www.ibm.com/blogs/research/2020/07/speaker-diarization-in-real-use-cases/){: external}.
 
-## Version 1.1.2 (27 November 2019)
+### Version 1.1.2 (27 November 2019)
 {: #v112}
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.1.2 is now available. The release includes the following change:
 
 -   You can create no more than 1024 custom language models and no more than 1024 custom acoustic models per owning credentials. For more information, see [Maximum number of custom models](/docs/speech-to-text-data?topic=speech-to-text-data-customization#customMaximum).
 
-## Version 1.0.1 (30 August 2019)
+### Version 1.0.1 (30 August 2019)
 {: #v101}
 
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.0.1 is now available. The service now works with {{site.data.keyword.icp4dfull_notm}} 2.1.0.1. The release includes the following changes:
@@ -148,7 +202,7 @@ The release includes the following functional changes and enhancements:
     -   [Language support for customization](/docs/speech-to-text-data?topic=speech-to-text-data-customization#languageSupport)
 -   Federal Information Security Management Act (FISMA) support is now available for {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}}. The service is FISMA High Ready.
 
-## Version 1.0.0 (28 June 2019)
+### Version 1.0.0 (28 June 2019)
 {: #v100}
 
 The initial release of the service. {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} is based on the {{site.data.keyword.speechtotextfull}} service on the public {{site.data.keyword.cloud_notm}}. For more information about the public service, see [About {{site.data.keyword.speechtotextshort}}](https://{DomainName}/docs/speech-to-text?topic=speech-to-text-about){: external}.

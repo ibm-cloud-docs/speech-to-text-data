@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-04"
+  years: 2018, 2021
+lastupdated: "2021-03-24"
 
 subcollection: speech-to-text-data
 
@@ -27,7 +27,7 @@ subcollection: speech-to-text-data
 # About
 {: #about}
 
-**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} released version 1.2 on 9 December 2020. The release includes a number of updates. For more information about all changes in this release, see the [Version 1.2 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v12) in the release notes.*
+**Service update:** *{{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} released version 1.2.1 on 26 March 2021. The release includes a number of updates to the installation procedures and override file. Versions 1.2 and 1.2.1 use the same version 1.2 documentation and installation instructions. For more information about all changes in this release, see the [Version 1.2.1 service update](/docs/speech-to-text-data?topic=speech-to-text-data-release-notes#v121) in the release notes.*
 
 {{site.data.keyword.speechtotextdatafull}} for {{site.data.keyword.icp4dfull}} provides speech transcription capabilities for your applications. The service leverages machine learning to combine knowledge of grammar, language structure, and the composition of audio and voice signals to accurately transcribe the human voice. It continuously updates and refines its transcription as it receives more speech.
 {: shortdesc}
