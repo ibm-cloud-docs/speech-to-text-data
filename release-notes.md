@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-12"
 
 subcollection: speech-to-text-data
 
@@ -42,11 +42,20 @@ The service has the following known limitation:
 ## Version 1.2.1 (26 March 2021)
 {: #v121}
 
-As of 9 April 2021, the service lets you add or remove installed models or voices for version 1.2 or 1.2.1 of the Speech services. For more information, see [Modifying the installed models and voices](/docs/speech-to-text-data?topic=speech-to-text-data-speech-cluster-12#speech-cluster-models-voices-12).
-{: note}
-
 {{site.data.keyword.speechtotextshort}} for {{site.data.keyword.icp4dfull_notm}} version 1.2.1 is now available. Versions 1.2 and 1.2.1 use the same version 1.2 documentation and installation instructions. Version 1.2.1 includes the following changes:
 
+-   **12 April:** The minimal `speech-override.yaml` file includes an extra definition, `dockerRegistryPrefix`:
+
+    ```yaml
+    global:
+      dockerRegistryPrefix: "{Registry}"
+      image:
+        pullSecret: "{Registry_pull_secret}"
+    ```
+    {: codeblock}
+
+    `{Registry}` is the path for the internal Docker registry. It must be `image-registry.openshift-image-registry.svc:5000/{namespace}`, where `{namespace}` is the namespace in which {{site.data.keyword.icp4dfull}} is installed, normally `zen`. For more information, see [The speech-override.yaml file](/docs/speech-to-text-data?topic=speech-to-text-data-speech-override-12#speech-override-file-12).
+-   **9 April:** The service lets you add or remove installed models or voices for version 1.2 or 1.2.1 of the Speech services. For more information, see [Modifying the installed models and voices](/docs/speech-to-text-data?topic=speech-to-text-data-speech-cluster-12#speech-cluster-models-voices-12).
 -   Version 1.2.1 supports installation on Red Hat OpenShift version 4.6 in addition to versions 4.5 and 3.11.
 -   For both clusters connected to the internet and air-gapped clusters, the installation instructions include the following steps:
     -   Use the `oc label` command to set up required labels for the namespace where {{site.data.keyword.icp4dfull_notm}} is installed.

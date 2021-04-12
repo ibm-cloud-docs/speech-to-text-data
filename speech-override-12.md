@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-12"
 
 subcollection: speech-to-text-data
 
@@ -43,6 +43,7 @@ tags:
 affinity: {}
 
 global:
+  dockerRegistryPrefix: "{Registry}"
   image:
     pullSecret: "{Registry_pull_secret}"
 
@@ -59,6 +60,7 @@ global:
       #Storage
       storageClassName: "portworx-shared-gp3"
     postgressql:
+      #Storage
       databaseStorageClass: "portworx-shared-gp3"
       databaseArchiveStorageClass: "portworx-shared-gp3"
       databaseWalStorageClass: "portworx-shared-gp3"
@@ -91,13 +93,13 @@ global:
 
 You replace and use the following variable values in the file:
 
+-   `{Registry}` is the path for the internal Docker registry. It must be `image-registry.openshift-image-registry.svc:5000/{namespace}`, where `{namespace}` is the namespace in which {{site.data.keyword.icp4dfull}} is installed, normally `zen`.
 -   `{Registry_pull_secret}` is the pull secret for the internal Docker registry, which you can learn by running the following command:
 
     ```bash
     oc get secrets | grep default-dockercfg
     ```
     {: pre}
-
 -   The authentication secrets for the Minio and PostgresSQL datastores must be created before the installation and must have the following values:
     -   For Minio, the `authsecretname` must be `minio`.
     -   For PostgresSQL, the `authsecretname` must be `user-provided-postgressql`.
